@@ -1,5 +1,0 @@
-c:\users\jbs\documents\visual studio 2010\Projects\BankTransactions\BankTransactions\bin\BankTransactions.dll
-c:\users\jbs\documents\visual studio 2010\Projects\BankTransactions\BankTransactions\bin\BankTransactions.pdb
-c:\users\jbs\documents\visual studio 2010\Projects\BankTransactions\BankTransactions\obj\Debug\ResolveAssemblyReference.cache
-c:\users\jbs\documents\visual studio 2010\Projects\BankTransactions\BankTransactions\obj\Debug\BankTransactions.dll
-c:\users\jbs\documents\visual studio 2010\Projects\BankTransactions\BankTransactions\obj\Debug\BankTransactions.pdb
