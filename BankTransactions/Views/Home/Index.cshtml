@@ -1,0 +1,33 @@
+﻿@using BankTransactions.Controllers.Adapters
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Options</h2>
+
+<h4>Account configuration</h4>
+<p>@Html.RouteLink("Modify settings", new { Controller = "Resource", Action = "Index" })</p>
+
+<h4>Overall transaction information</h4>
+<p>@Html.RouteLink("All transactions", new { Controller = "Home", Action = "All" })</p>
+<p>@Html.RouteLink("Overview per group", new { Controller = "Home", Action = "Overview" })</p>
+<p>@Html.RouteLink("Overview per month", new { Controller = "Home", Action = "Monthly" })</p>
+<p>@Html.RouteLink("Overview per type", new { Controller = "Home", Action = "Types" })</p>
+<p>@Html.RouteLink("Past 7 days", new { Controller = "Home", Action = "Recent" })</p>
+<p>@Html.RouteLink("Statistics", new { Controller = "Home", Action = "Stats" })</p>
+
+<h4>Filtered transactions</h4>
+<p>@Html.RouteLink("ATM Transactions", new { Controller = "Home", Action = "ATM" })</p>
+<p>@Html.RouteLink("PoS Payment Transactions", new { Controller = "Home", Action = "PoS" })</p>
+
+<h4>Charting</h4>
+<p>@Html.RouteLink("Global charts", new { Controller = "Home", Action = "Charts" })</p>
+
+<h4>Info</h4>
+<p>@Html.RouteLink("System information", new { Controller = "Home", Action = "Author" })</p>
+
+<!--<h4>People</h4>
+<p>@Html.RouteLink("Jorn Cruijsen", new { Controller = "Home", Action = "Index", Account = "Jorn" })</p>
+<p>@Html.RouteLink("Alexander Kersten", new { Controller = "Home", Action = "Index", Account = "Alexander" })</p>-->
+

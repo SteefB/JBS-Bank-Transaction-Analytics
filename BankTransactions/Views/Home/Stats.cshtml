@@ -1,0 +1,105 @@
+﻿@model IEnumerable<nl.jorncruijsen.jbs.transactions.BankRecord>
+
+@using nl.jorncruijsen.jbs.transactions
+
+@{
+    ViewBag.Title = "Stats";
+}
+
+<h2>Overall statistics</h2>
+
+@{string daysSince = string.Format("{0}", DateTime.Now.Subtract(Model.OrderBy(r => r.RequestDate).First().RequestDate).Days);}
+    
+<h4>Totals</h4>
+<table>
+    <tr class="statistic"><td class="highlight">Total amount transacted (in your favor):</td><td class="statValue">@string.Format("{0:C}", Model.Sum(r => r.Amount * (r.Type.Equals(BankRecord.TransactionType.CREDIT) ? 1 : -1)))</td></tr>
+
+    <tr class="statistic"><td class="highlight">Total amount transferred through your account:</td><td class="statValue">@string.Format("{0:C}", Model.Sum(r => r.Amount))</td></tr>
+
+    <tr class="statistic"><td class="highlight">Total number of transactions:</td><td class="statValue">@string.Format("{0}", Model.Count())</td></tr>
+
+    <tr class="statistic"><td class="highlight">Total number of unique transaction partners:</td><td class="statValue">@string.Format("{0}", Model.Select(r => r.Name).Distinct().Count())</td></tr>
+
+    <tr class="statistic"><td class="highlight">Total number of days since first transaction:</td><td class="statValue">@daysSince</td></tr>
+    
+    @{string activeDays = string.Format("{0}", Model.GroupBy(r => r.RequestDate).Count());}
+
+    <tr class="statistic"><td class="highlight">Total number of days a transaction occurred:</td><td class="statValue">@string.Format("{0} ({1:0.000}%)", activeDays, (Double.Parse(activeDays) / Double.Parse(daysSince)) * 100)</td></tr>
+</table>
+
+<h4>Averages</h4>
+<table>
+    <tr class="statistic"><td class="highlight">Average number of transactions per month:</td><td class="statValue">@string.Format("{0}", Model.GroupBy(r => new { r.RequestDate.Year, r.RequestDate.Month }).Average(g => g.Count()))</td></tr>
+    
+    <tr class="statistic"><td class="highlight">Average amount transferred per month:</td><td class="statValue">@string.Format("{0:C}", Model.GroupBy(r => new { r.RequestDate.Year, r.RequestDate.Month }).Average(g => g.Sum(r => r.Amount)))</td></tr>
+    
+    <tr class="statistic"><td class="highlight">Average amount transacted per month:</td><td class="statValue">@string.Format("{0:C}", Model.GroupBy(r => new { r.RequestDate.Year, r.RequestDate.Month }).Average(g => g.Sum(r => r.Amount * (r.Type.Equals(BankRecord.TransactionType.CREDIT) ? 1 : -1))))</td></tr>
+    
+    <tr class="statistic"><td class="highlight">Average amount per individual transfer:</td><td class="statValue">@string.Format("{0:C}", Model.Average(r => r.Amount))</td></tr>
+    
+    <tr class="statistic"><td class="highlight">Average amount per individual transaction:</td><td class="statValue">@string.Format("{0:C}", Model.Average(r => r.Amount * (r.Type.Equals(BankRecord.TransactionType.CREDIT) ? 1 : -1)))</td></tr>
+</table>
+    
+<h4>Spending</h4>
+
+<table>    
+    <tr class="statistic"><td class="highlight">Average spending per day:</td><td class="statValue">@string.Format("{0:C}", Model.Where(r => r.Type.Equals(BankRecord.TransactionType.DEBIT)).Sum(r => r.Amount) / Int32.Parse(daysSince))</td></tr>
+    
+    <tr class="statistic"><td class="highlight">Average spending per <i>active</i> day:</td><td class="statValue">@string.Format("{0:C}", Model.Where(r => r.Type.Equals(BankRecord.TransactionType.DEBIT)).GroupBy(r => r.RequestDate).Average(g => g.Sum(r => r.Amount) / g.Count()))</td></tr>
+</table>
+
+<h4>Income</h4>
+
+<table>
+    <tr class="statistic"><td class="highlight">Average income per day:</td><td class="statValue">@string.Format("{0:C}", Model.Where(r => r.Type.Equals(BankRecord.TransactionType.CREDIT)).Sum(r => r.Amount) / Int32.Parse(daysSince))</td></tr>
+    
+    <tr class="statistic"><td class="highlight">Average income per <i>active</i> day:</td><td class="statValue">@string.Format("{0:C}", Model.Where(r => r.Type.Equals(BankRecord.TransactionType.CREDIT)).GroupBy(r => r.RequestDate).Average(g => g.Sum(r => r.Amount) / g.Count()))</td></tr>
+</table>
+
+<h4>Balance</h4>
+
+<table>
+    <tr class="statistic"><td class="highlight">Average balance per day:</td><td class="statValue">@string.Format("{0:C}", Model.Sum(r => r.Amount * (r.Type.Equals(BankRecord.TransactionType.CREDIT) ? 1 : -1)) / Int32.Parse(daysSince))</td></tr>
+
+    <tr class="statistic"><td class="highlight">Average balance per <i>active</i> day:</td><td class="statValue">@string.Format("{0:C}", Model.GroupBy(r => r.RequestDate).Average(g => g.Sum(r => r.Amount * (r.Type.Equals(BankRecord.TransactionType.CREDIT) ? 1 : -1)) / g.Count()))</td></tr>
+</table>
+
+<h4>Extremes</h4>
+<table>
+    @{BankRecord max = Model.OrderByDescending(r => r.Amount).First();}
+
+    <tr class="statistic"><td class="highlight">Highest amount transacted:</td><td class="statValue">@string.Format("{0:C} > {1} > {2}", max.Amount, max.Name, max.RequestDate.ToShortDateString())</td></tr>
+
+    @{BankRecord min = Model.OrderBy(r => r.Amount).First();}
+
+    <tr class="statistic"><td class="highlight">Lowest amount transacted:</td><td class="statValue">@string.Format("{0:C} > {1} > {2}", min.Amount, min.Name, min.RequestDate.ToShortDateString())</td></tr>
+
+    @{IGrouping<string, BankRecord> valuable = Model.Where(r => r.Type.Equals(BankRecord.TransactionType.CREDIT)).GroupBy(r => r.Name).OrderByDescending(g => g.Sum(r => r.Amount)).First();}
+
+    <tr class="statistic"><td class="highlight">Most valuable single contributor:</td><td class="statValue">@string.Format("{0:C} > {1}", valuable.Sum(r => r.Amount), valuable.Key)</td></tr>
+
+    @{IGrouping<string, BankRecord> drain = Model.Where(r => r.Type.Equals(BankRecord.TransactionType.DEBIT)).GroupBy(r => r.Name).OrderByDescending(g => g.Sum(r => r.Amount)).First();}
+
+    <tr class="statistic"><td class="highlight">Biggest money drain:</td><td class="statValue">@string.Format("{0:C} > {1}", drain.Sum(r => r.Amount), drain.Key)</td></tr>
+
+    @{IGrouping<string, BankRecord> most = Model.GroupBy(r => r.Name).OrderByDescending(r => r.Count()).First();}
+
+    <tr class="statistic"><td class="highlight">Most transactions with:</td><td class="statValue">@string.Format("{0} ({1})", most.Key, most.Count())</td></tr>
+</table>
+
+@{DateTime mostRecent = Model.OrderByDescending(r => r.RequestDate).First().RequestDate;}
+
+<h4>Past 7 days</h4>
+<p>Taking the most recent transaction @string.Format("({0})", mostRecent.ToShortDateString()) and going back from there. @Html.RouteLink("(View all)", new { Controller = "Home", Action = "Recent" })</p>
+
+@{IEnumerable<BankRecord> pastWeek = Model.Where(r => r.RequestDate.AddDays(7).CompareTo(mostRecent) > 0);}
+
+<table>
+    <tr class="statistic"><td class="highlight">Number of transactions:</td><td class="statValue">@string.Format("{0}", pastWeek.Count())</td></tr>
+
+    <tr class="statistic"><td class="highlight">Amount transferred:</td><td class="statValue">@string.Format("{0:C}", pastWeek.Sum(r => r.Amount))</td></tr>
+
+    <tr class="statistic"><td class="highlight">Amount transacted:</td><td class="statValue">@string.Format("{0:C}", pastWeek.Sum(r => r.Amount * (r.Type.Equals(BankRecord.TransactionType.DEBIT) ? 1 : -1)))</td></tr>
+
+    <tr></tr>
+</table>
