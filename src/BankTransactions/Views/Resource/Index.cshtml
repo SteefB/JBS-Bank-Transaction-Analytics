@@ -1,0 +1,78 @@
+﻿@using nl.jorncruijsen.jbs.transactions
+@using BankTransactions.Controllers.Adapters
+
+@{
+    ViewBag.Title = "Configuration";
+}
+
+<h2>Resources</h2>
+
+<h4>Resource information</h4>
+
+<p>We are currently using this file: <span class="highlight">@ViewData["ResourceFolder"]</span></p>
+
+<p>We're told this file is of type: <span class="highlight">@ViewData["ResourceType"]</span></p>
+
+<p>We found <span class="highlight">@ViewData["NumLines"]</span> lines in this file, <span class="highlight">@ViewData["NumRecords"]</span> of which have been identified as valid transaction records.</p>
+
+<p>This resource was last updated on: <span class="highlight">@(((DateTime)ViewData["LastUpdate"]).ToLongDateString()) @(((DateTime)ViewData["LastUpdate"]).ToLongTimeString())</span></p>
+
+<h4>Resource records</h4>
+
+<p>Would you like to add records to this file? We'll skip over any duplicate records.</p>
+
+@{Html.BeginForm("AddFile", "Resource", FormMethod.Post, new { enctype = "multipart/form-data" });}
+
+<p><input type="file" name="file"/></p>
+
+<p><input type="submit" value="Add records" /></p>
+
+@{Html.EndForm();}
+
+<h4>Change resource base file</h4>
+
+<p>We have found <span class="highlight">@((((IEnumerable<string>)ViewData["RootFiles"])).Count())</span> root files in the base directory, would you like to change the current root file to another?</p>
+
+<p>(Note: Not functional)</p>
+
+@{Html.BeginForm("UpdateRootFile", "Resource");}
+
+@foreach(string s in ((IEnumerable<string>)ViewData["RootFiles"])) {
+       
+}
+        
+@{Html.EndForm();}
+
+<h4>Resource cleaner</h4>
+
+@if((int)ViewData["NumLines"] == (int)ViewData["NumRecords"]) {
+    <p>We have determined the current resource is as clean as can be.</p>   
+} else {
+    <p>We have determined the current resource is eligible for some cleaning; this option will remove any records that cannot be properly parsed into a transaction record.</p>
+    
+    Html.BeginForm("CleanFile", "Resource");
+ 
+    <p><input type="submit" value="Clean the resource" /></p>
+ 
+    Html.EndForm();
+    
+    <p>(Note: Not functional)</p>
+}
+
+<h4>Resource parser</h4>
+
+<p>(Note: Not functional)</p>
+
+<p>The current parser is set to <span class="highlight">@ViewData["ResourceType"]</span>, would you like to change this setting?</p>
+
+@{Html.BeginForm("UpdateAdapter", "Resource");}
+
+@foreach (TransactionAdapterType type in Enum.GetValues(typeof(TransactionAdapterType)))
+{
+     
+    <p>@Html.RadioButton("adapter", type)@type.ToString()</p>
+}
+
+<p><input type="submit" value="Update parser" /></p>
+
+@{Html.EndForm();}

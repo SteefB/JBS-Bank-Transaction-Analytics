@@ -1,0 +1,12 @@
+C:\Users\JBS\documents\visual studio 2010\Projects\BankTransactions\BankTransactions\bin\BankTransactions.dll
+C:\Users\JBS\documents\visual studio 2010\Projects\BankTransactions\BankTransactions\bin\BankTransactions.pdb
+C:\Users\JBS\documents\visual studio 2010\Projects\BankTransactions\BankTransactions\bin\JQChart.Web.Mvc.xml
+C:\Users\JBS\documents\visual studio 2010\Projects\BankTransactions\BankTransactions\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\JBS\documents\visual studio 2010\Projects\BankTransactions\BankTransactions\obj\Debug\BankTransactions.dll
+C:\Users\JBS\documents\visual studio 2010\Projects\BankTransactions\BankTransactions\obj\Debug\BankTransactions.pdb
+C:\Users\JBS\Documents\Visual Studio 2010\Projects\JBS-Bank-Transaction-Analytics\BankTransactions\bin\BankTransactions.dll
+C:\Users\JBS\Documents\Visual Studio 2010\Projects\JBS-Bank-Transaction-Analytics\BankTransactions\bin\BankTransactions.pdb
+C:\Users\JBS\Documents\Visual Studio 2010\Projects\JBS-Bank-Transaction-Analytics\BankTransactions\bin\JQChart.Web.Mvc.xml
+C:\Users\JBS\Documents\Visual Studio 2010\Projects\JBS-Bank-Transaction-Analytics\BankTransactions\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\JBS\Documents\Visual Studio 2010\Projects\JBS-Bank-Transaction-Analytics\BankTransactions\obj\Debug\BankTransactions.dll
+C:\Users\JBS\Documents\Visual Studio 2010\Projects\JBS-Bank-Transaction-Analytics\BankTransactions\obj\Debug\BankTransactions.pdb

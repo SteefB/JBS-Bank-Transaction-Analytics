@@ -1,0 +1,14 @@
+﻿@using nl.jorncruijsen.jbs.transactions
+
+@model IEnumerable<BankRecord>
+
+@{
+    ViewBag.Title = "Point of Sale";
+}
+
+<h2>Point of Sale transactions</h2>
+
+<p>Listing all PoS transactions, ordered descendingly by date</p>
+<p>Total amount: @string.Format("{0:C}", Model.Sum(r => r.Type.Equals(BankRecord.TransactionType.DEBIT) ? r.Amount * -1 : r.Amount))</p>
+
+@Html.Partial("Partials/TransactionTable", Model)
