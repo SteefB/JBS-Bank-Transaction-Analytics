@@ -15,7 +15,7 @@ namespace BankTransactions.Controllers.Util
         private const string settingsLocation = "Settings/";
         private const string settingsName = "config.xml";
 
-        private static HashSet<KeyValuePair<string, object>> settings;
+        private static Dictionary<string, object> settings;
 
         #region Properties
 
@@ -56,7 +56,8 @@ namespace BankTransactions.Controllers.Util
         public static void Initialize()
         {
             // None of this stuff actually works
-            settings = XMLSerializationService.Read<HashSet<KeyValuePair<string, object>>>(ResourceSettingsLocation);
+            ///settings = XMLSerializationService.Read<Dictionary<string, object>>(ResourceSettingsLocation);
+            settings = new Dictionary<string, object>();
 
             // For now, just hard code the needed values in here, effectively avoiding the problem and postponing a fix ;)
             AddSettingValue(FileNameKey, "rabo_jorn.csv");
@@ -86,15 +87,16 @@ namespace BankTransactions.Controllers.Util
             AddSettingValue(key, value);
         }
 
-        public static void AddSettingValue(string key, object value) {
-            settings.Add(new KeyValuePair<string, object>(key, value));
+        public static void AddSettingValue(string key, object value)
+        {
+            settings[key] = value;
 
             Save();
         }
 
         private static void Save()
         {
-            XMLSerializationService.Write<HashSet<KeyValuePair<string, object>>>(settings, ResourceSettingsLocation);
+            ///XMLSerializationService.Write<Dictionary<string, object>>(settings, ResourceSettingsLocation);
         }
     }
 }

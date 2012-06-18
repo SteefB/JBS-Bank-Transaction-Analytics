@@ -72,11 +72,6 @@
     <Reference Include="System.Web.Helpers" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_GlobalResources\TransactionAdapters.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TransactionAdapters.resx</DependentUpon>
-    </Compile>
     <Compile Include="Controllers\Adapters\Factory\TransactionAdapterFactory.cs" />
     <Compile Include="Controllers\Adapters\TransactionAdapterING.cs" />
     <Compile Include="Controllers\Adapters\TransactionAdapter.cs" />
@@ -101,7 +96,6 @@
   <ItemGroup>
     <Content Include="Content\jquery.jqChart.css" />
     <Content Include="Global.asax" />
-    <None Include="App_GlobalResources\rabo_jorn.csv" />
     <Content Include="Scripts\excanvas.js" />
     <Content Include="Scripts\jquery-1.5.1.min.js" />
     <Content Include="Scripts\jquery.jqChart.min.js" />
@@ -144,6 +138,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="App_GlobalResources\" />
     <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
@@ -181,12 +176,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\Charts.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="App_GlobalResources\TransactionAdapters.resx">
-      <Generator>GlobalResourceProxyGenerator</Generator>
-      <LastGenOutput>TransactionAdapters.Designer.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\ATM.cshtml" />
