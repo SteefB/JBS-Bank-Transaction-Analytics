@@ -1,0 +1,5 @@
+src/BankTransactions/bin
+src/BankTransactions/obj
+*.user
+*.suo
+*.sln.cache
