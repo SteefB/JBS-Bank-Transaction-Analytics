@@ -22,3 +22,9 @@ C:\Users\Jorn\Documents\Visual Studio 2012\Projects\JBS-Bank-Transaction-Analyti
 C:\Users\Jorn\Documents\Visual Studio 2012\Projects\JBS-Bank-Transaction-Analytics\src\BankTransactions\bin\BankTransactions.dll
 C:\Users\Jorn\Documents\Visual Studio 2012\Projects\JBS-Bank-Transaction-Analytics\src\BankTransactions\bin\BankTransactions.pdb
 C:\Users\Jorn\Documents\Visual Studio 2012\Projects\JBS-Bank-Transaction-Analytics\src\BankTransactions\bin\JQChart.Web.Mvc.xml
+C:\Users\naberinm\Documents\Visual Studio 2012\Projects\JBS-Bank-Transaction-Analytics\src\BankTransactions\bin\BankTransactions.dll
+C:\Users\naberinm\Documents\Visual Studio 2012\Projects\JBS-Bank-Transaction-Analytics\src\BankTransactions\bin\BankTransactions.pdb
+C:\Users\naberinm\Documents\Visual Studio 2012\Projects\JBS-Bank-Transaction-Analytics\src\BankTransactions\bin\JQChart.Web.Mvc.xml
+C:\Users\naberinm\Documents\Visual Studio 2012\Projects\JBS-Bank-Transaction-Analytics\src\BankTransactions\obj\Debug\BankTransactions.csprojResolveAssemblyReference.cache
+C:\Users\naberinm\Documents\Visual Studio 2012\Projects\JBS-Bank-Transaction-Analytics\src\BankTransactions\obj\Debug\BankTransactions.dll
+C:\Users\naberinm\Documents\Visual Studio 2012\Projects\JBS-Bank-Transaction-Analytics\src\BankTransactions\obj\Debug\BankTransactions.pdb
