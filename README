@@ -8,3 +8,9 @@ Running the solution:
 - Open the visual studio project
 - Run it
 - Done
+
+Using the application:
+
+- Download a CSV bank record file
+- Merge it with the root file
+- Done

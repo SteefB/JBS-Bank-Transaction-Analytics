@@ -1,5 +1,8 @@
 src/BankTransactions/bin
 src/BankTransactions/obj
+src/UpgradeLog.htm
+src/UpgradeLog.XML
+src/Backup
 *.user
 *.suo
 *.sln.cache
