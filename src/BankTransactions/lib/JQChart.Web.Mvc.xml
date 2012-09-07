@@ -1,0 +1,2723 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JQChart.Web.Mvc</name>
+    </assembly>
+    <members>
+        <member name="T:JQChart.Web.Mvc.ViewComponent">
+            <summary>
+            Base class for all view components. 
+            </summary>
+        </member>
+        <member name="M:JQChart.Web.Mvc.ViewComponent.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:JQChart.Web.Mvc.ViewComponent"/> class.
+            </summary>
+        </member>
+        <member name="M:JQChart.Web.Mvc.ViewComponent.SerializeObject(System.Object)">
+            <summary>
+            Serializes an object.
+            </summary>
+            <param name="o">The object which is to be serialized.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.ViewComponent.SerializeString(System.String)">
+            <summary>
+            Serializes a string object.
+            </summary>
+            <param name="s">The string which is to be serialized.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.ViewComponent.SerializeBool(System.Boolean)">
+            <summary>
+            Serializes a bool value.
+            </summary>
+            <param name="b">The bool which is to be serialized.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.ViewComponent.SerializeInt(System.Int32)">
+            <summary>
+            Serializes an int value.
+            </summary>
+            <param name="i">The int which is to be serialized.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.ViewComponent.SerializeDouble(System.Double)">
+            <summary>
+            Serializes a double value.
+            </summary>
+            <param name="d">The double which is to be serialized.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.ViewComponent.SerializeDateTime(System.DateTime)">
+            <summary>
+            Serializes a date time value.
+            </summary>
+            <param name="date">The date time which is to be serialized.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.ViewComponent.SerializeIEnumerable(System.Collections.IEnumerable)">
+            <summary>
+            Serializes an IEnumerable object.
+            </summary>
+            <param name="a">An IEnumerable which is to be serialized.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.ViewComponent.SerializeComponentSettings(System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Serializes the component settings.
+            </summary>
+            <param name="settings">The settings.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.ViewComponent.SetValue``1(System.String,``0)">
+            <summary>
+            Sets a property value.
+            </summary>
+            <typeparam name="T">The type of the property.</typeparam>
+            <param name="property">The name of the property.</param>
+            <param name="value">The value of the property.</param>
+        </member>
+        <member name="M:JQChart.Web.Mvc.ViewComponent.GetValue``1(System.String)">
+            <summary>
+            Gets a property value.
+            </summary>
+            <typeparam name="T">The type of the property.</typeparam>
+            <param name="property">The name of the property.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.ViewComponent.SetString(System.String,System.String)">
+            <summary>
+            Sets a string property value.
+            </summary>        
+            <param name="property">The name of the property.</param>
+            <param name="value">The value of the property.</param>
+        </member>
+        <member name="M:JQChart.Web.Mvc.ViewComponent.GetString(System.String)">
+            <summary>
+            Gets a string property value.
+            </summary>
+            <param name="property">The property name.</param>
+            <returns>The value of the property</returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.ViewComponent.SetBool(System.String,System.Nullable{System.Boolean})">
+            <summary>
+            Sets a bool property value.
+            </summary>
+            <param name="property">The name of the property.</param>
+            <param name="value">The value of the property.</param>
+        </member>
+        <member name="M:JQChart.Web.Mvc.ViewComponent.GetBool(System.String)">
+            <summary>
+            Gets a bool property value.
+            </summary>
+            <param name="property">The property name.</param>
+            <returns>The value of the property</returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.ViewComponent.SetInt(System.String,System.Nullable{System.Int32})">
+            <summary>
+            Sets an int property value.
+            </summary>
+            <param name="property">The name of the property.</param>
+            <param name="value">The value of the property.</param>
+        </member>
+        <member name="M:JQChart.Web.Mvc.ViewComponent.GetInt(System.String)">
+            <summary>
+            Gets an int property value.
+            </summary>
+            <param name="property">The property name.</param>
+            <returns>The value of the property</returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.ViewComponent.SetDouble(System.String,System.Nullable{System.Double})">
+            <summary>
+            Sets a double property value.
+            </summary>
+            <param name="property">The name of the property.</param>
+            <param name="value">The value of the property.</param>
+        </member>
+        <member name="M:JQChart.Web.Mvc.ViewComponent.GetDouble(System.String)">
+            <summary>
+            Gets a double property value.
+            </summary>
+            <param name="property">The property name.</param>
+            <returns>The value of the property</returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.ViewComponent.SetDateTime(System.String,System.Nullable{System.DateTime})">
+            <summary>
+            Sets a date time property value.
+            </summary>
+            <param name="property">The name of the property.</param>
+            <param name="value">The value of the property.</param>
+        </member>
+        <member name="M:JQChart.Web.Mvc.ViewComponent.GetDateTime(System.String)">
+            <summary>
+            Gets a date time property value.
+            </summary>
+            <param name="property">The property name.</param>
+            <returns>The value of the property</returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.ViewComponent.SetIEnumerable``1(System.String,``0)">
+            <summary>
+            Sets an IEnumerable property value.
+            </summary>
+            <param name="property">The name of the property.</param>
+            <param name="value">The value of the property.</param>
+        </member>
+        <member name="M:JQChart.Web.Mvc.ViewComponent.GetIEnumerable``1(System.String)">
+            <summary>
+            Gets an IEnumerable property value.
+            </summary>
+            <param name="property">The property name.</param>
+            <returns>The value of the property</returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.ViewComponent.SetComponent``1(System.String,``0)">
+            <summary>
+            Sets a view component property value.
+            </summary>
+            <typeparam name="T">The type of the component.</typeparam>
+            <param name="property">The property name.</param>
+            <param name="value">The value of the property.</param>
+        </member>
+        <member name="M:JQChart.Web.Mvc.ViewComponent.GetComponent``1(System.String)">
+            <summary>
+            Gets a view component property value.
+            </summary>
+            <typeparam name="T">The type of the component.</typeparam>
+            <param name="property">The property name.</param>
+            <returns>The value of the property.</returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.ViewComponent.ToJson">
+            <summary>
+            Seriealize the component to Json.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:JQChart.Web.Mvc.ColorStop">
+            <summary>
+            Describes the offset and color of a transition point in a gradient. 
+            </summary>
+        </member>
+        <member name="M:JQChart.Web.Mvc.ColorStop.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:JQChart.Web.Mvc.ColorStop"/> class.
+            </summary>
+        </member>
+        <member name="M:JQChart.Web.Mvc.ColorStop.Offset(System.Double)">
+            <summary>
+            Sets the location of the gradient stop within the gradient vector.
+            </summary>
+            <param name="offset">The offset.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.ColorStop.Color(System.String)">
+            <summary>
+            Sets the color of the gradient stop. 
+            </summary>
+            <param name="color">The color.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.ColorStop.StrokeStyle(System.Drawing.Color)">
+            <summary>
+            Sets the color of the gradient stop.
+            </summary>
+            <param name="color">The color.</param>
+            <returns></returns>
+        </member>
+        <member name="T:JQChart.Web.Mvc.StockSeries`1">
+            <summary>
+            Defines the Stock Series.
+            </summary>
+            <typeparam name="T">The type of the chart model data item.</typeparam>
+        </member>
+        <member name="T:JQChart.Web.Mvc.HlocSeries`2">
+            <summary>
+            Base class for the stock and candlestick series.
+            </summary>
+            <typeparam name="TComponent">The type of the component.</typeparam>
+            <typeparam name="T">The type of the chart model data item.</typeparam>
+        </member>
+        <member name="T:JQChart.Web.Mvc.Series`2">
+            <summary>
+            Base class for all series.
+            </summary>
+            <typeparam name="TComponent">The type of the component.</typeparam>
+            <typeparam name="T">The type of the chart model data item.</typeparam>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Series`2.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:JQChart.Web.Mvc.Series`2"/> class.
+            </summary>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Series`2.Title(System.String)">
+            <summary>
+            Sets the title of the series.
+            </summary>
+            <param name="title">The title.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Series`2.FillStyle(System.String)">
+            <summary>
+            Sets the fill style.
+            </summary>
+            <param name="color">The color.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Series`2.FillStyle(System.Drawing.Color)">
+            <summary>
+            Sets the fill style.
+            </summary>
+            <param name="color">The color.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Series`2.FillStyle(System.Action{JQChart.Web.Mvc.GradientFactory})">
+            <summary>
+            Defines the fill style.
+            </summary>
+            <param name="config">The config.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Series`2.StrokeStyle(System.String)">
+            <summary>
+            Sets the stroke style.
+            </summary>
+            <param name="color">The color.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Series`2.StrokeStyle(System.Drawing.Color)">
+            <summary>
+            Sets the stroke style.
+            </summary>
+            <param name="color">The color.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Series`2.LineWidth(System.Double)">
+            <summary>
+            Sets the line width.
+            </summary>
+            <param name="lineWidth">Width of the line.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Series`2.Labels(System.Boolean)">
+            <summary>
+            Sets the series labels visibility.
+            </summary>
+            <param name="visible">if set to <c>true</c> the series labels are visible.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Series`2.Labels(System.Action{JQChart.Web.Mvc.DataPointLabels})">
+            <summary>
+            Defines the series labels.
+            </summary>
+            <param name="config">The config.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Series`2.Markers(System.Boolean)">
+            <summary>
+            Sets the series markers visibility.
+            </summary>
+            <param name="visible">if set to <c>true</c> the series markers are visible.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Series`2.Markers(System.Action{JQChart.Web.Mvc.Markers})">
+            <summary>
+            Defines the series markers.
+            </summary>
+            <param name="config">The config.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Series`2.AxisX(System.String)">
+            <summary>
+            Sets the name of the X axis that this series belongs to.
+            </summary>
+            <param name="axisName">Name of the X axis that this series belongs to.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Series`2.AxisY(System.String)">
+            <summary>
+            Sets the name of the Y axis that this series belongs to.
+            </summary>
+            <param name="axisName">Name of the Y axis that this series belongs to.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.HlocSeries`2.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:JQChart.Web.Mvc.HlocSeries`2"/> class.
+            </summary>
+        </member>
+        <member name="M:JQChart.Web.Mvc.HlocSeries`2.XValues(System.Collections.IEnumerable)">
+            <summary>
+            Sets unbound X values.
+            </summary>
+            <param name="values">The values.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.HlocSeries`2.XValues(System.Linq.Expressions.Expression{System.Func{`1,System.Object}})">
+            <summary>
+            Sets bound X values.
+            </summary>
+            <param name="expression">The expression used to extract the X values from the chart model.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.HlocSeries`2.HighValues(System.Collections.IEnumerable)">
+            <summary>
+            Sets unbound High values.
+            </summary>
+            <param name="values">The values.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.HlocSeries`2.HighValues(System.Linq.Expressions.Expression{System.Func{`1,System.Object}})">
+            <summary>
+            Sets bound High values.
+            </summary>
+            <param name="expression">The expression used to extract the High values from the chart model.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.HlocSeries`2.LowValues(System.Collections.IEnumerable)">
+            <summary>
+            Sets unbound Low values.
+            </summary>
+            <param name="values">The values.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.HlocSeries`2.LowValues(System.Linq.Expressions.Expression{System.Func{`1,System.Object}})">
+            <summary>
+            Sets bound Low values.
+            </summary>
+            <param name="expression">The expression used to extract the Low values from the chart model.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.HlocSeries`2.OpenValues(System.Collections.IEnumerable)">
+            <summary>
+            Sets unbound Open values.
+            </summary>
+            <param name="values">The values.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.HlocSeries`2.OpenValues(System.Linq.Expressions.Expression{System.Func{`1,System.Object}})">
+            <summary>
+            Sets bound Open values.
+            </summary>
+            <param name="expression">The expression used to extract the Open values from the chart model.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.HlocSeries`2.CloseValues(System.Collections.IEnumerable)">
+            <summary>
+            Sets unbound Close values.
+            </summary>
+            <param name="values">The values.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.HlocSeries`2.CloseValues(System.Linq.Expressions.Expression{System.Func{`1,System.Object}})">
+            <summary>
+            Sets bound Close values.
+            </summary>
+            <param name="expression">The expression used to extract the Close values from the chart model.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.HlocSeries`2.Labels(System.Action{JQChart.Web.Mvc.DataPointLabels})">
+            <summary>
+            Defines the series labels.
+            </summary>
+            <param name="config">The config.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.HlocSeries`2.Labels(System.Boolean)">
+            <summary>
+            Sets the series labels visibility.
+            </summary>
+            <param name="visible">if set to <c>true</c> the series labels are visible.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.HlocSeries`2.Markers(System.Action{JQChart.Web.Mvc.Markers})">
+            <summary>
+            Defines the series markers.
+            </summary>
+            <param name="config">The config.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.HlocSeries`2.Markers(System.Boolean)">
+            <summary>
+            Sets the series markers visibility.
+            </summary>
+            <param name="visible">if set to <c>true</c> the series markers are visible.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.StockSeries`1.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:JQChart.Web.Mvc.StockSeries`1"/> class.
+            </summary>
+        </member>
+        <member name="T:JQChart.Web.Mvc.AreaSeries`1">
+            <summary>
+            Defines the Area Series.
+            </summary>
+            <typeparam name="T">The type of the chart model data item.</typeparam>
+        </member>
+        <member name="T:JQChart.Web.Mvc.XYSeries`2">
+            <summary>
+            Base series class.
+            </summary>
+            <typeparam name="TComponent">The type of the component.</typeparam>
+            <typeparam name="T">The type of the chart model data item.</typeparam>
+        </member>
+        <member name="M:JQChart.Web.Mvc.XYSeries`2.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:JQChart.Web.Mvc.XYSeries`2"/> class.
+            </summary>
+        </member>
+        <member name="M:JQChart.Web.Mvc.XYSeries`2.XValues(System.Collections.IEnumerable)">
+            <summary>
+            Sets unbound X values.
+            </summary>
+            <param name="values">The values.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.XYSeries`2.XValues(System.Linq.Expressions.Expression{System.Func{`1,System.Object}})">
+            <summary>
+            Sets bound X values.
+            </summary>
+            <param name="expression">The expression used to extract the X values from the chart model.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.XYSeries`2.YValues(System.Collections.IEnumerable)">
+            <summary>
+            Sets unbound Y values.
+            </summary>
+            <param name="values">The values.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.XYSeries`2.YValues(System.Linq.Expressions.Expression{System.Func{`1,System.Object}})">
+            <summary>
+            Sets bound Y values.
+            </summary>
+            <param name="expression">The expression used to extract the Y values from the chart model.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.AreaSeries`1.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:JQChart.Web.Mvc.AreaSeries`1"/> class.
+            </summary>
+        </member>
+        <member name="T:JQChart.Web.Mvc.LinearGradient">
+            <summary>
+            Describes a linear gradient. 
+            </summary>
+            <remarks>
+            Linear gradients are defined by an imaginary line which defines the direction of the gradient
+            and list of color stops.
+            
+            Color stops are placed along the imaginary line somewhere between 0 and 1, where 0 is at the starting (x0, y0) point, and 1 is at the ending (x, y1) point.
+            </remarks>
+        </member>
+        <member name="T:JQChart.Web.Mvc.Gradient`1">
+            <summary>
+            Describes a gradient, composed of gradient stops.
+            </summary>
+            <typeparam name="TComponent">The type of the component.</typeparam>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Gradient`1.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:JQChart.Web.Mvc.Gradient`1"/> class.
+            </summary>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Gradient`1.ColorStops(System.Action{JQChart.Web.Mvc.ColorStopFactory})">
+            <summary>
+            Creates gradient stops. 
+            </summary>
+            <param name="config">The config.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.LinearGradient.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:JQChart.Web.Mvc.LinearGradient"/> class.
+            </summary>
+        </member>
+        <member name="M:JQChart.Web.Mvc.LinearGradient.StartPoint(System.Double,System.Double)">
+            <summary>
+            Sets the gradient start point.
+            </summary>
+            <param name="x">The x.</param>
+            <param name="y">The y.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.LinearGradient.EndPoint(System.Double,System.Double)">
+            <summary>
+            Sets the gradient end point.
+            </summary>
+            <param name="x">The x.</param>
+            <param name="y">The y.</param>
+            <returns></returns>
+        </member>
+        <member name="T:JQChart.Web.Mvc.Legend">
+            <summary>
+            Defines the chart legend.
+            </summary>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Legend.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:JQChart.Web.Mvc.Legend"/> class.
+            </summary>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Legend.Title(System.String)">
+            <summary>
+            Sets the legend title.
+            </summary>
+            <param name="title">The title.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Legend.Title(System.Action{JQChart.Web.Mvc.Title})">
+            <summary>
+            Defines the legend title.
+            </summary>
+            <param name="config">The config.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Legend.Background(System.String)">
+            <summary>
+            Sets the legend background.
+            </summary>
+            <param name="color">The color.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Legend.Background(System.Drawing.Color)">
+            <summary>
+            Sets the legend background.
+            </summary>
+            <param name="color">The color.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Legend.Background(System.Action{JQChart.Web.Mvc.GradientFactory})">
+            <summary>
+            Defines the legend background.
+            </summary>
+            <param name="config">The config.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Legend.Border(System.Action{JQChart.Web.Mvc.Border})">
+            <summary>
+            Defines the legend border.
+            </summary>
+            <param name="config">The config.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Legend.Margin(System.Double)">
+            <summary>
+            Sets the legend maring.
+            </summary>
+            <param name="margin">The margin.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Legend.Font(System.String)">
+            <summary>
+            /// Sets the title font.
+            </summary>
+            <param name="font">The font.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Legend.TextFillStyle(System.String)">
+            <summary>
+            Sets the text fill style.
+            </summary>
+            <param name="color">The color.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Legend.TextFillStyle(System.Drawing.Color)">
+            <summary>
+            Sets the text fill style.
+            </summary>
+            <param name="color">The color.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Legend.TextFillStyle(System.Action{JQChart.Web.Mvc.GradientFactory})">
+            <summary>
+            Defines the text fill style.
+            </summary>
+            <param name="config">The config.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Legend.TextStrokeStyle(System.String)">
+            <summary>
+            Sets the text stroke style.
+            </summary>
+            <param name="color">The color.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Legend.TextStrokeStyle(System.Drawing.Color)">
+            <summary>
+            Sets the text stroke style.
+            </summary>
+            <param name="color">The color.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Legend.TextLineWidth(System.Double)">
+            <summary>
+            Sets the text line width.
+            </summary>
+            <param name="lineWidth">Width of the line.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Legend.Location(JQChart.Web.Mvc.LegendLocation)">
+            <summary>
+            Sets the legend location.
+            </summary>
+            <param name="location">The location.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Legend.Visible(System.Boolean)">
+            <summary>
+            Sets the legend visibility.
+            </summary>
+            <param name="visible">The legend is visible if the value is set to <c>true</c>.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Legend.CustomItems(System.Action{JQChart.Web.Mvc.LegendItemFactory})">
+            <summary>
+            Defines the custom legend items.
+            </summary>
+            <param name="config">The config.</param>
+            <returns></returns>
+        </member>
+        <member name="T:JQChart.Web.Mvc.RadarSplineSeries`1">
+            <summary>
+            Defines the Radar Spline Series.
+            </summary>
+            <typeparam name="T">The type of the chart model data item.</typeparam>
+        </member>
+        <member name="M:JQChart.Web.Mvc.RadarSplineSeries`1.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:JQChart.Web.Mvc.RadarSplineSeries`1"/> class.
+            </summary>
+        </member>
+        <member name="T:JQChart.Web.Mvc.Chart`1">
+            <summary>
+            Defines the Chart.
+            </summary>
+            <typeparam name="T">The type of the data item.</typeparam>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Chart`1.ID(System.String)">
+            <summary>
+            Sets the ID of the chart.
+            </summary>
+            <param name="id">The id.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Chart`1.Width(System.String)">
+            <summary>
+            Sets the width of the chart.
+            </summary>
+            <param name="width">The width.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Chart`1.Width(System.Int32)">
+            <summary>
+            Sets the width of the chart.
+            </summary>
+            <param name="width">The width.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Chart`1.Height(System.String)">
+            <summary>
+            Sets the height of the chart.
+            </summary>
+            <param name="height">The height.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Chart`1.Height(System.Int32)">
+            <summary>
+            Sets the height of the chart.
+            </summary>
+            <param name="height">The height.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Chart`1.Title(System.String)">
+            <summary>
+            Sets the title of the chart.
+            </summary>
+            <param name="title">The title.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Chart`1.Title(System.Action{JQChart.Web.Mvc.Title})">
+            <summary>
+            Defines the title of the chart.
+            </summary>
+            <param name="config">The config.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Chart`1.Background(System.String)">
+            <summary>
+            Sets the background of the chart.
+            </summary>
+            <param name="color">The color.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Chart`1.Background(System.Drawing.Color)">
+            <summary>
+            Sets the background of the chart.
+            </summary>
+            <param name="color">The color.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Chart`1.Background(System.Action{JQChart.Web.Mvc.GradientFactory})">
+            <summary>
+            Defines the background of the chart.
+            </summary>
+            <param name="config">The config.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Chart`1.ChartAreaBackground(System.String)">
+            <summary>
+            Sets the background of the chart area.
+            </summary>
+            <param name="color">The color.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Chart`1.ChartAreaBackground(System.Drawing.Color)">
+            <summary>
+            Sets the background of the chart area.
+            </summary>
+            <param name="color">The color.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Chart`1.ChartAreaBackground(System.Action{JQChart.Web.Mvc.GradientFactory})">
+            <summary>
+            Defines the background of the chart area.
+            </summary>
+            <param name="config">The config.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Chart`1.Border(System.Action{JQChart.Web.Mvc.Border})">
+            <summary>
+            Defines the border of the chart.
+            </summary>
+            <param name="config">The config.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Chart`1.Legend(System.Boolean)">
+            <summary>
+            Sets the legend visibility.
+            </summary>
+            <param name="visible">The legend is visible if the value is set to <c>true</c>.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Chart`1.Legend(System.Action{JQChart.Web.Mvc.Legend})">
+            <summary>
+            Defines the legend of the chart.
+            </summary>
+            <param name="config">The config.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Chart`1.PaletteColors(System.Action{JQChart.Web.Mvc.PaletteColors})">
+            <summary>
+            Defines the palette colors
+            </summary>
+            <param name="config">The config.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Chart`1.Tooltips(System.Boolean)">
+            <summary>
+            Specifies whether the tooltips are disabled.
+            </summary>        
+            <param name="disabled">The tooltips are disabled if the value is set to <c>true</c>.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Chart`1.Tooltips(System.Action{JQChart.Web.Mvc.Tooltips})">
+            <summary>
+            Defines the chart tooltips.
+            </summary>
+            <param name="config">The config.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Chart`1.Crosshairs(System.Boolean)">
+            <summary>
+            Specifies whether the crosshairs are enabled.
+            </summary>        
+            <param name="enabled">The crosshairs are enabled if the value is set to <c>true</c>.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Chart`1.Crosshairs(System.Action{JQChart.Web.Mvc.Crosshairs})">
+            <summary>
+            Defines the chart crosshairs.
+            </summary>
+            <param name="config">The config.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Chart`1.Series(System.Action{JQChart.Web.Mvc.SeriesFactory{`0}})">
+            <summary>
+            Defines the chart series.
+            </summary>
+            <param name="config">The config.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Chart`1.Axes(System.Action{JQChart.Web.Mvc.AxesFactory{`0}})">
+            <summary>
+            Defines the chart axes.
+            </summary>
+            <param name="config">The config.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Chart`1.Render">
+            <summary>
+            Renders the jqChart.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:JQChart.Web.Mvc.StackedColumnSeries`1">
+            <summary>
+            Defines the Stacked Column Series.
+            </summary>
+            <typeparam name="T">The type of the chart model data item.</typeparam>
+        </member>
+        <member name="M:JQChart.Web.Mvc.StackedColumnSeries`1.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:JQChart.Web.Mvc.StackedColumnSeries`1"/> class.
+            </summary>
+        </member>
+        <member name="M:JQChart.Web.Mvc.StackedColumnSeries`1.Markers(System.Action{JQChart.Web.Mvc.Markers})">
+            <summary>
+            Defines the series markers.
+            </summary>
+            <param name="config">The config.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.StackedColumnSeries`1.Markers(System.Boolean)">
+            <summary>
+            Sets the series markers visibility.
+            </summary>
+            <param name="visible">if set to <c>true</c> the series markers are visible.</param>
+            <returns></returns>
+        </member>
+        <member name="T:JQChart.Web.Mvc.ScatterSeries`1">
+            <summary>
+            Defines the Scatter Series.
+            </summary>
+            <typeparam name="T">The type of the chart model data item.</typeparam>
+        </member>
+        <member name="M:JQChart.Web.Mvc.ScatterSeries`1.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:JQChart.Web.Mvc.ScatterSeries`1"/> class.
+            </summary>
+        </member>
+        <member name="T:JQChart.Web.Mvc.Line">
+            <summary>
+            Defines a single line settings.
+            </summary>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Line.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:JQChart.Web.Mvc.Line"/> class.
+            </summary>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Line.Visible(System.Boolean)">
+            <summary>
+            Sets the visibility.
+            </summary>
+            <param name="visible">Visible if the value is set to <c>true</c>.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Line.StrokeStyle(System.String)">
+            <summary>
+            Sets the stroke style.
+            </summary>
+            <param name="color">The color.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Line.StrokeStyle(System.Drawing.Color)">
+            <summary>
+            Sets the stroke style.
+            </summary>
+            <param name="color">The color.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Line.LineWidth(System.Double)">
+            <summary>
+            Sets the line width.
+            </summary>
+            <param name="lineWidth">Width of the line.</param>
+            <returns></returns>
+        </member>
+        <member name="T:JQChart.Web.Mvc.LabelValueType">
+            <summary>
+            Label Value Type
+            </summary>
+        </member>
+        <member name="F:JQChart.Web.Mvc.LabelValueType.DataValue">
+            <summary>
+            Data Value
+            </summary>
+        </member>
+        <member name="F:JQChart.Web.Mvc.LabelValueType.Percentage">
+            <summary>
+            Percentage
+            </summary>
+        </member>
+        <member name="T:JQChart.Web.Mvc.CategoryAxis`1">
+            <summary>
+            Defines the Category Axis.
+            </summary>
+            <typeparam name="T">The type of the chart model data item.</typeparam>
+        </member>
+        <member name="T:JQChart.Web.Mvc.Axis`2">
+            <summary>
+            Defines common axis settings.
+            </summary>
+            <typeparam name="TComponent">The type of the component.</typeparam>
+            <typeparam name="T">The type of the chart model data item.</typeparam>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Axis`2.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:JQChart.Web.Mvc.Axis`2"/> class.
+            </summary>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Axis`2.Name(System.String)">
+            <summary>
+            Sets the name of the axis.
+            </summary>
+            <param name="name">The name.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Axis`2.Width(System.Double)">
+            <summary>
+            Sets the width of the axis.
+            </summary>
+            <param name="width">The width.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Axis`2.Height(System.Double)">
+            <summary>
+            Sets the height of the axis.
+            </summary>
+            <param name="height">The height.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Axis`2.StrokeStyle(System.String)">
+            <summary>
+            Sets the stroke style of the axis.
+            </summary>
+            <param name="color">The color.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Axis`2.StrokeStyle(System.Drawing.Color)">
+            <summary>
+            Sets the stroke style of the axis.
+            </summary>
+            <param name="color">The color.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Axis`2.LineWidth(System.Double)">
+            <summary>
+            Sets the line width of the axis.
+            </summary>
+            <param name="lineWidth">Width of the line.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Axis`2.Margin(System.Double)">
+            <summary>
+            Sets the margin.
+            </summary>
+            <param name="margin">The margin.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Axis`2.Reversed(System.Boolean)">
+            <summary>
+            Sets if the axis is reversed.
+            </summary>
+            <param name="reversed">if set to <c>true</c> the axis is reversed.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Axis`2.MajorTickMarks(System.Action{JQChart.Web.Mvc.TickMarks})">
+            <summary>
+            Defines the major tick marks.
+            </summary>
+            <param name="config">The config.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Axis`2.MinorTickMarks(System.Action{JQChart.Web.Mvc.TickMarks})">
+            <summary>
+            Defines the minor tick marks.
+            </summary>
+            <param name="config">The config.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Axis`2.MajorGridLines(System.Action{JQChart.Web.Mvc.GridLines})">
+            <summary>
+            Defines the major grid lines.
+            </summary>
+            <param name="config">The config.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Axis`2.MinorGridLines(System.Action{JQChart.Web.Mvc.GridLines})">
+            <summary>
+            Defines the minor grid lines.
+            </summary>
+            <param name="config">The config.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Axis`2.Labels(System.Action{JQChart.Web.Mvc.AxisLabels})">
+            <summary>
+            Defines the axis labels.
+            </summary>
+            <param name="config">The config.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Axis`2.Title(System.String)">
+            <summary>
+            Sets the axis title.
+            </summary>
+            <param name="title">The title.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Axis`2.Title(System.Action{JQChart.Web.Mvc.Title})">
+            <summary>
+            Defines the axis title.
+            </summary>
+            <param name="config">The config.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.CategoryAxis`1.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:JQChart.Web.Mvc.CategoryAxis`1"/> class.
+            </summary>
+        </member>
+        <member name="M:JQChart.Web.Mvc.CategoryAxis`1.Categories(System.Collections.IEnumerable)">
+            <summary>
+            Sets unbound categories.
+            </summary>
+            <param name="values">The values.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.CategoryAxis`1.Categories(System.Linq.Expressions.Expression{System.Func{`0,System.Object}})">
+            <summary>
+            Sets bound categories.
+            </summary>
+            <param name="expression">The expression used to extract the categories from the chart model.</param>
+            <returns></returns>
+        </member>
+        <member name="T:JQChart.Web.Mvc.AxisLabels">
+            <summary>
+            Defines the axis labels.
+            </summary>
+        </member>
+        <member name="T:JQChart.Web.Mvc.Labels`1">
+            <summary>
+            Defines the labels.
+            </summary>
+        </member>
+        <member name="T:JQChart.Web.Mvc.Mark`1">
+            <summary>
+            Base class for tick martks, grid lines and labels.
+            </summary>
+            <typeparam name="TComponent">The type of the component.</typeparam>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Mark`1.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:JQChart.Web.Mvc.Mark`1"/> class.
+            </summary>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Mark`1.Visible(System.Boolean)">
+            <summary>
+            Sets the visibility.
+            </summary>
+            <param name="visible">Visible if the value is set to <c>true</c>.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Mark`1.StrokeStyle(System.String)">
+            <summary>
+            Sets the stroke style.
+            </summary>
+            <param name="color">The color.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Mark`1.StrokeStyle(System.Drawing.Color)">
+            <summary>
+            Sets the stroke style.
+            </summary>
+            <param name="color">The color.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Mark`1.LineWidth(System.Double)">
+            <summary>
+            Sets the line width.
+            </summary>
+            <param name="lineWidth">Width of the line.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Mark`1.Interval(System.Double)">
+            <summary>
+            Sets the data interval.
+            </summary>
+            <param name="interval">The interval.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Mark`1.IntervalOffset(System.Double)">
+            <summary>
+            Sets the data interval offset.
+            </summary>
+            <param name="offset">The offset.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Mark`1.IntervalOffsetType(JQChart.Web.Mvc.DateTimeIntervalType)">
+            <summary>
+            Sets the data interval offset type.
+            </summary>
+            <param name="offsetType">Type of the offset.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Labels`1.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:JQChart.Web.Mvc.Labels`1"/> class.
+            </summary>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Labels`1.StringFormat(System.String)">
+            <summary>
+            Sets the string format.
+            </summary>
+            <param name="stringFormat">The string format.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Labels`1.Font(System.String)">
+            <summary>
+            Sets the font.
+            </summary>
+            <param name="font">The font.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Labels`1.FillStyle(System.String)">
+            <summary>
+            Sets the fill style.
+            </summary>
+            <param name="color">The color.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Labels`1.FillStyle(System.Drawing.Color)">
+            <summary>
+            Sets the fill style.
+            </summary>
+            <param name="color">The color.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Labels`1.FillStyle(System.Action{JQChart.Web.Mvc.GradientFactory})">
+            <summary>
+            Defines the fill style.
+            </summary>
+            <param name="config">The config.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.AxisLabels.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:JQChart.Web.Mvc.AxisLabels"/> class.
+            </summary>
+        </member>
+        <member name="M:JQChart.Web.Mvc.AxisLabels.Angle(System.Double)">
+            <summary>
+            Sets the labels rotation angle.
+            </summary>
+            <param name="angle">The angle.</param>
+            <returns></returns>
+        </member>
+        <member name="T:JQChart.Web.Mvc.ColumnSeries`1">
+            <summary>
+            Defines the Column Series.
+            </summary>
+            <typeparam name="T">The type of the chart model data item.</typeparam>
+        </member>
+        <member name="M:JQChart.Web.Mvc.ColumnSeries`1.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:JQChart.Web.Mvc.ColumnSeries`1"/> class.
+            </summary>
+        </member>
+        <member name="T:JQChart.Web.Mvc.BarSeries`1">
+            <summary>
+            Defines the Bar Series.
+            </summary>
+            <typeparam name="T">The type of the chart model data item.</typeparam>
+        </member>
+        <member name="M:JQChart.Web.Mvc.BarSeries`1.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:JQChart.Web.Mvc.BarSeries`1"/> class.
+            </summary>
+        </member>
+        <member name="T:JQChart.Web.Mvc.GridLines">
+            <summary>
+            Defines the chart grid lines.
+            </summary>
+        </member>
+        <member name="M:JQChart.Web.Mvc.GridLines.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:JQChart.Web.Mvc.GridLines"/> class.
+            </summary>
+        </member>
+        <member name="T:JQChart.Web.Mvc.RadarAreaSeries`1">
+            <summary>
+            Defines the Radar Area Series.
+            </summary>
+            <typeparam name="T">The type of the chart model data item.</typeparam>
+        </member>
+        <member name="M:JQChart.Web.Mvc.RadarAreaSeries`1.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:JQChart.Web.Mvc.RadarAreaSeries`1"/> class.
+            </summary>
+        </member>
+        <member name="T:JQChart.Web.Mvc.LegendItem">
+            <summary>
+            Represents a single legend item.
+            </summary>
+        </member>
+        <member name="M:JQChart.Web.Mvc.LegendItem.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:JQChart.Web.Mvc.LegendItem"/> class.
+            </summary>
+        </member>
+        <member name="M:JQChart.Web.Mvc.LegendItem.Text(System.String)">
+            <summary>
+            Sets the item text.
+            </summary>
+            <param name="text">The text.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.LegendItem.Text(System.Action{JQChart.Web.Mvc.Title})">
+            <summary>
+            Defines the item text.
+            </summary>
+            <param name="config">The config.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.LegendItem.Marker(System.Action{JQChart.Web.Mvc.Markers})">
+            <summary>
+            Defines the legend item marker.
+            </summary>
+            <param name="config">The config.</param>
+            <returns></returns>
+        </member>
+        <member name="T:JQChart.Web.Mvc.PaletteColorsType">
+            <summary>
+            Palette Colors Type
+            </summary>
+        </member>
+        <member name="F:JQChart.Web.Mvc.PaletteColorsType.Default">
+            <summary>
+            Default
+            </summary>
+        </member>
+        <member name="F:JQChart.Web.Mvc.PaletteColorsType.Grayscale">
+            <summary>
+            Grayscale
+            </summary>
+        </member>
+        <member name="F:JQChart.Web.Mvc.PaletteColorsType.CustomColors">
+            <summary>
+            Custom Colors
+            </summary>
+        </member>
+        <member name="T:JQChart.Web.Mvc.GradientFactory">
+            <summary>
+            Creates linear and radial gradients.
+            </summary>
+        </member>
+        <member name="M:JQChart.Web.Mvc.GradientFactory.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:JQChart.Web.Mvc.GradientFactory"/> class.
+            </summary>
+        </member>
+        <member name="M:JQChart.Web.Mvc.GradientFactory.LinearGradient">
+            <summary>
+            Creates a linear gradient.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.GradientFactory.LinearGradient(System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            Creates a linear gradient.
+            </summary>
+            <param name="x0">The x0.</param>
+            <param name="y0">The y0.</param>
+            <param name="x1">The x1.</param>
+            <param name="y1">The y1.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.GradientFactory.RadialGradient">
+            <summary>
+            Creates a radial gradient.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.GradientFactory.RadialGradient(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            Creates a radial gradient.
+            </summary>
+            <param name="x0">The x0.</param>
+            <param name="y0">The y0.</param>
+            <param name="r0">The r0.</param>
+            <param name="x1">The x1.</param>
+            <param name="y1">The y1.</param>
+            <param name="r1">The r1.</param>
+            <returns></returns>
+        </member>
+        <member name="T:JQChart.Web.Mvc.Markers">
+            <summary>
+            Defines the markers.
+            </summary>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Markers.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:JQChart.Web.Mvc.Markers"/> class.
+            </summary>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Markers.FillStyle(System.String)">
+            <summary>
+            Sets the fill style.
+            </summary>
+            <param name="color">The color.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Markers.FillStyle(System.Drawing.Color)">
+            <summary>
+            Sets the fill style.
+            </summary>
+            <param name="color">The color.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Markers.FillStyle(System.Action{JQChart.Web.Mvc.GradientFactory})">
+            <summary>
+            Defines the fill style.
+            </summary>
+            <param name="config">The config.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Markers.StrokeStyle(System.String)">
+            <summary>
+            Sets the stroke style.
+            </summary>
+            <param name="color">The color.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Markers.StrokeStyle(System.Drawing.Color)">
+            <summary>
+            Sets the stroke style.
+            </summary>
+            <param name="color">The color.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Markers.LineWidth(System.Double)">
+            <summary>
+            Sets the line width.
+            </summary>
+            <param name="lineWidth">Width of the line.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Markers.Size(System.Double)">
+            <summary>
+            Sets the marker size in pixels.
+            </summary>
+            <param name="size">The size.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Markers.MarkerType(JQChart.Web.Mvc.MarkerType)">
+            <summary>
+            Sets the marker type.
+            </summary>
+            <param name="markerType">Type of the marker.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Markers.Visible(System.Boolean)">
+            <summary>
+            Sets the markers visibility.
+            </summary>
+            <param name="visible">The markers are visible if the value is set to <c>true</c>.</param>
+            <returns></returns>
+        </member>
+        <member name="T:JQChart.Web.Mvc.JQChartSuite`1">
+            <summary>
+            Provides access to the controls
+            </summary>
+            <typeparam name="TModel">The type of the model.</typeparam>
+        </member>
+        <member name="M:JQChart.Web.Mvc.JQChartSuite`1.#ctor(System.Web.Mvc.HtmlHelper{`0})">
+            <summary>
+            Initializes a new instance of the <see cref="T:JQChart.Web.Mvc.JQChartSuite`1"/> class.
+            </summary>
+            <param name="helper">The helper.</param>
+        </member>
+        <member name="M:JQChart.Web.Mvc.JQChartSuite`1.Chart">
+            <summary>
+            Creates a new unbound <see cref="M:JQChart.Web.Mvc.JQChartSuite`1.Chart"/>.
+            </summary>
+            <example>
+            <code lang="CS">
+            &lt;%= Html.JQChart()
+                       .Width(500)
+                       .Height(300)
+                       .Chart()
+                       .ID("jqChart")
+                       .Series(series =&gt; {
+                            series.Column().Title("Column")
+                                           .XValues(new string[] { "Cat 1", "Cat 2", "Cat 3" })
+                                           .YValues(new double[] { 70, 40, 85 });
+                       })
+                       .Render()
+            %&gt;
+            </code>
+            </example>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.JQChartSuite`1.Chart``1">
+            <summary>
+            Creates a <see cref="T:JQChart.Web.Mvc.Chart`1"/>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.JQChartSuite`1.Chart``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Creates a new <see cref="T:JQChart.Web.Mvc.Chart`1"/> bound to the specified data source.
+            </summary>
+            <typeparam name="T">The type of the data item.</typeparam>
+            <param name="dataSource">The data source.</param>
+            <example>
+            <code lang="CS">
+            &lt;%= Html.JQChart().Chart(Model)
+                       .ID("Chart")
+                       .Width(500)
+                       .Height(300)
+                       .Series(series =&gt; {
+                            series.Column().Title("Column")
+                                           .XValues(el =&gt; el.Label)
+                                           .YValues(el =&gt; el.Value);
+                       })
+                       .Render()
+            %&gt;
+            </code>
+            </example>
+        </member>
+        <member name="M:JQChart.Web.Mvc.JQChartSuite`1.Chart``1(System.String)">
+            <summary>
+            Creates a new <see cref="T:JQChart.Web.Mvc.Chart`1"/> bound an item in ViewData.
+            </summary>
+            <typeparam name="T">The type of the data item.</typeparam>
+            <param name="dataSourceViewDataKey">The data source view data key.</param>
+            <example>
+            <code lang="CS">
+            &lt;%= Html.JQChart().Chart&lt;ChartData&gt;("ChartData")
+                       .ID("jqChart")
+                       .Width(500)
+                       .Height(300)
+                       .Series(series =&gt; {
+                            series.Column().Title("Column")
+                                           .XValues(el =&gt; el.Label)
+                                           .YValues(el =&gt; el.Value);
+                       })
+                       .Render()
+            %&gt;
+            </code>
+            </example>
+        </member>
+        <member name="T:JQChart.Web.Mvc.ColorStopFactory">
+            <summary>
+            Creates color stops for gradients.
+            </summary>
+        </member>
+        <member name="M:JQChart.Web.Mvc.ColorStopFactory.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:JQChart.Web.Mvc.ColorStopFactory"/> class.
+            </summary>
+        </member>
+        <member name="M:JQChart.Web.Mvc.ColorStopFactory.Add(System.Double,System.Drawing.Color)">
+            <summary>
+            Creates a color stop.
+            </summary>
+            <param name="offset">The offset.</param>
+            <param name="color">The color.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.ColorStopFactory.Add(System.Double,System.String)">
+            <summary>
+            Creates a color stop.
+            </summary>
+            <param name="offset">The offset.</param>
+            <param name="color">The color.</param>
+            <returns></returns>
+        </member>
+        <member name="T:JQChart.Web.Mvc.LineSeries`1">
+            <summary>
+            Defines the Line Series.
+            </summary>
+            <typeparam name="T">The type of the chart model data item.</typeparam>
+        </member>
+        <member name="M:JQChart.Web.Mvc.LineSeries`1.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:JQChart.Web.Mvc.LineSeries`1"/> class.
+            </summary>
+        </member>
+        <member name="T:JQChart.Web.Mvc.SplineAreaSeries`1">
+            <summary>
+            Defines the Spline Area Series.
+            </summary>
+            <typeparam name="T">The type of the chart model data item.</typeparam>
+        </member>
+        <member name="M:JQChart.Web.Mvc.SplineAreaSeries`1.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:JQChart.Web.Mvc.SplineAreaSeries`1"/> class.
+            </summary>
+        </member>
+        <member name="T:JQChart.Web.Mvc.Location">
+            <summary>
+            Location
+            </summary>
+        </member>
+        <member name="F:JQChart.Web.Mvc.Location.Left">
+            <summary>
+            Left
+            </summary>
+        </member>
+        <member name="F:JQChart.Web.Mvc.Location.Top">
+            <summary>
+            Top
+            </summary>
+        </member>
+        <member name="F:JQChart.Web.Mvc.Location.Right">
+            <summary>
+            Right
+            </summary>
+        </member>
+        <member name="F:JQChart.Web.Mvc.Location.Bottom">
+            <summary>
+            Bottom
+            </summary>
+        </member>
+        <member name="T:JQChart.Web.Mvc.DateTimeIntervalType">
+            <summary>
+            DateTime Interval Type
+            </summary>
+        </member>
+        <member name="F:JQChart.Web.Mvc.DateTimeIntervalType.Milliseconds">
+            <summary>
+            Milliseconds
+            </summary>
+        </member>
+        <member name="F:JQChart.Web.Mvc.DateTimeIntervalType.Seconds">
+            <summary>
+            Seconds
+            </summary>
+        </member>
+        <member name="F:JQChart.Web.Mvc.DateTimeIntervalType.Minutes">
+            <summary>
+            Minutes
+            </summary>
+        </member>
+        <member name="F:JQChart.Web.Mvc.DateTimeIntervalType.Hours">
+            <summary>
+            Hours
+            </summary>
+        </member>
+        <member name="F:JQChart.Web.Mvc.DateTimeIntervalType.Days">
+            <summary>
+            Days
+            </summary>
+        </member>
+        <member name="F:JQChart.Web.Mvc.DateTimeIntervalType.Weeks">
+            <summary>
+            Weeks
+            </summary>
+        </member>
+        <member name="F:JQChart.Web.Mvc.DateTimeIntervalType.Months">
+            <summary>
+            Months
+            </summary>
+        </member>
+        <member name="F:JQChart.Web.Mvc.DateTimeIntervalType.Years">
+            <summary>
+            Years
+            </summary>
+        </member>
+        <member name="T:JQChart.Web.Mvc.DateTimeAxis`1">
+            <summary>
+            Defines the DateTime Axis.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:JQChart.Web.Mvc.DateTimeAxis`1.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:JQChart.Web.Mvc.DateTimeAxis`1"/> class.
+            </summary>
+        </member>
+        <member name="M:JQChart.Web.Mvc.DateTimeAxis`1.Minimum(System.Nullable{System.DateTime})">
+            <summary>
+            Sets the range minimum.
+            </summary>
+            <remarks>
+            If the minimum is not set or null, it is calculated automatically.
+            </remarks>
+            <param name="minimum">The minimum.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.DateTimeAxis`1.Maximum(System.Nullable{System.DateTime})">
+            <summary>
+            Sets the range maximum.
+            </summary>
+            <remarks>
+            If the maximum is not set or null, it is calculated automatically.
+            </remarks>
+            <param name="maximum">The maximum.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.DateTimeAxis`1.Interval(System.Nullable{System.Double})">
+            <summary>
+            Sets the range interval.
+            </summary>
+            <remarks>
+            If the interval is not set or null, it is calculated automatically.
+            </remarks>
+            <param name="interval">The interval.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.DateTimeAxis`1.IntervalType(System.Nullable{JQChart.Web.Mvc.DateTimeIntervalType})">
+            <summary>
+            Sets the range interval type.
+            </summary>
+            <remarks>
+            If the interval type is not set or null, it is calculated automatically.
+            </remarks>
+            <param name="intervalType">The interval type.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.DateTimeAxis`1.SkipEmptyDays(System.Nullable{System.Boolean})">
+            <summary>
+            Specifies whether the days without data should be skipped.
+            </summary>
+            <param name="skipEmptyDays">if set to <c>true</c> the empty days are skipped.</param>
+            <returns></returns>
+        </member>
+        <member name="T:JQChart.Web.Mvc.Title">
+            <summary>
+            Defines the chart title.
+            </summary>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Title.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:JQChart.Web.Mvc.Title"/> class.
+            </summary>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Title.Text(System.String)">
+            <summary>
+            Sets the title text.
+            </summary>
+            <param name="text">The text.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Title.Font(System.String)">
+            <summary>
+            /// Sets the title font.
+            </summary>
+            <param name="font">The font.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Title.FillStyle(System.String)">
+            <summary>
+            Sets the fill style.
+            </summary>
+            <param name="color">The color.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Title.FillStyle(System.Drawing.Color)">
+            <summary>
+            Sets the fill style.
+            </summary>
+            <param name="color">The color.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Title.FillStyle(System.Action{JQChart.Web.Mvc.GradientFactory})">
+            <summary>
+            Defines the fill style.
+            </summary>
+            <param name="config">The config.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Title.StrokeStyle(System.String)">
+            <summary>
+            Sets the stroke style.
+            </summary>
+            <param name="color">The color.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Title.StrokeStyle(System.Drawing.Color)">
+            <summary>
+            Sets the stroke style.
+            </summary>
+            <param name="color">The color.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Title.LineWidth(System.Double)">
+            <summary>
+            Sets the line width.
+            </summary>
+            <param name="lineWidth">Width of the line.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Title.Margin(System.Double)">
+            <summary>
+            Sets the title margin.
+            </summary>
+            <param name="margin">The margin.</param>
+            <returns></returns>
+        </member>
+        <member name="T:JQChart.Web.Mvc.TooltipsType">
+            <summary>
+            Tooltips Type
+            </summary>
+        </member>
+        <member name="F:JQChart.Web.Mvc.TooltipsType.Normal">
+            <summary>
+            Normal
+            </summary>
+        </member>
+        <member name="F:JQChart.Web.Mvc.TooltipsType.Shared">
+            <summary>
+            Shared
+            </summary>
+        </member>
+        <member name="T:JQChart.Web.Mvc.RadarLineSeries`1">
+            <summary>
+            Defines the Radar Line Series.
+            </summary>
+            <typeparam name="T">The type of the chart model data item.</typeparam>
+        </member>
+        <member name="M:JQChart.Web.Mvc.RadarLineSeries`1.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:JQChart.Web.Mvc.RadarLineSeries`1"/> class.
+            </summary>
+        </member>
+        <member name="T:JQChart.Web.Mvc.Crosshairs">
+            <summary>
+            Defines the chart crosshairs.
+            </summary>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Crosshairs.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:JQChart.Web.Mvc.Crosshairs"/> class.
+            </summary>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Crosshairs.Enabled(System.Boolean)">
+            <summary>
+            Specifies whether the crossharis are enabled.
+            </summary>
+            <param name="enabled">The crosshairs are enabled if the value is set to <c>true</c>.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Crosshairs.SnapToDataPoints(System.Boolean)">
+            <summary>
+            Specifies whether the crosshairs are snapped to data points.
+            </summary>
+            <param name="snapToDataPoints">Snap to data points if the value is set to <c>true</c>.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Crosshairs.VerticalLine(System.Boolean)">
+            <summary>
+            Sets the vertical line visibility.
+            </summary>
+            <param name="visible">The vertical line is visible if the value is set to <c>true</c>.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Crosshairs.VerticalLine(System.Action{JQChart.Web.Mvc.Line})">
+            <summary>
+            Defines the vertical line.
+            </summary>
+            <param name="config">The config.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Crosshairs.HorizontalLine(System.Boolean)">
+            <summary>
+            Sets the horizontal line visibility.
+            </summary>
+            <param name="visible">The horizontal line is visible if the value is set to <c>true</c>.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Crosshairs.HorizontalLine(System.Action{JQChart.Web.Mvc.Line})">
+            <summary>
+            Defines the horizontal line.
+            </summary>
+            <param name="config">The config.</param>
+            <returns></returns>
+        </member>
+        <member name="T:JQChart.Web.Mvc.LegendLocation">
+            <summary>
+            Specifies the legend location.
+            </summary>
+        </member>
+        <member name="F:JQChart.Web.Mvc.LegendLocation.Left">
+            <summary>
+            Left
+            </summary>
+        </member>
+        <member name="F:JQChart.Web.Mvc.LegendLocation.Top">
+            <summary>
+            Top
+            </summary>
+        </member>
+        <member name="F:JQChart.Web.Mvc.LegendLocation.Right">
+            <summary>
+            Right
+            </summary>
+        </member>
+        <member name="F:JQChart.Web.Mvc.LegendLocation.Bottom">
+            <summary>
+            Bottom
+            </summary>
+        </member>
+        <member name="T:JQChart.Web.Mvc.Tooltips">
+            <summary>
+            Defines the chart tooltips.
+            </summary>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Tooltips.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:JQChart.Web.Mvc.Tooltips"/> class.
+            </summary>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Tooltips.Disabled(System.Boolean)">
+            <summary>
+            Specifies whether the tooltips are disabled.
+            </summary>        
+            <param name="disabled">The tooltips are disabled if the value is set to <c>true</c>.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Tooltips.TooltipsType(JQChart.Web.Mvc.TooltipsType)">
+            <summary>
+            Sets the tooltip type.
+            </summary>
+            <param name="type">Type of the value.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Tooltips.BorderColor(System.String)">
+            <summary>
+            Sets the border color.
+            </summary>
+            <param name="borderColor">The border color.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Tooltips.BorderColor(System.Drawing.Color)">
+            <summary>
+            Sets the border color.
+            </summary>
+            <param name="borderColor">The border color.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Tooltips.SnapArea(System.Double)">
+            <summary>
+            Sets the tooltip snap area.
+            </summary>
+            <param name="snapArea">The snap area.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Tooltips.Highlighting(System.Boolean)">
+            <summary>
+            Specifies whether the highlighting is enabled.
+            </summary>        
+            <param name="highlighting">The highlighting is enabled if the value is set to <c>true</c>.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Tooltips.HighlightingFillStyle(System.String)">
+            <summary>
+            Sets the highlighting fill style.
+            </summary>
+            <param name="highlightingFillStyle">The highlighting fill style.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Tooltips.HighlightingFillStyle(System.Drawing.Color)">
+            <summary>
+            Sets the highlighting fill style.
+            </summary>
+            <param name="highlightingFillStyle">The highlighting fill style.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Tooltips.HighlightingStrokeStyle(System.String)">
+            <summary>
+            Sets the highlighting stroke style.
+            </summary>
+            <param name="highlightingStrokeStyle">The highlighting stroke style.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Tooltips.HighlightingStrokeStyle(System.Drawing.Color)">
+            <summary>
+            Sets the highlighting stroke style.
+            </summary>
+            <param name="highlightingStrokeStyle">The highlighting stroke style.</param>
+            <returns></returns>
+        </member>
+        <member name="T:JQChart.Web.Mvc.LegendItemFactory">
+            <summary>
+            Creates legend items.
+            </summary>
+        </member>
+        <member name="M:JQChart.Web.Mvc.LegendItemFactory.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:JQChart.Web.Mvc.LegendItemFactory"/> class.
+            </summary>
+        </member>
+        <member name="M:JQChart.Web.Mvc.LegendItemFactory.Add">
+            <summary>
+            Creates a legend item.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.LegendItemFactory.Add(System.String,System.String)">
+            <summary>
+            Creates a legend item.
+            </summary>
+            <param name="text">The text.</param>
+            <param name="color">The color.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.LegendItemFactory.Add(System.String,System.Drawing.Color)">
+            <summary>
+            Creates a legend item.
+            </summary>
+            <param name="text">The text.</param>
+            <param name="color">The color.</param>
+            <returns></returns>
+        </member>
+        <member name="T:JQChart.Web.Mvc.LinearRadiusAxis`1">
+            <summary>
+            Defines the Linear Radius Axis.
+            </summary>
+            <typeparam name="T">The type of the chart model data item.</typeparam>
+        </member>
+        <member name="T:JQChart.Web.Mvc.RangeAxis`2">
+            <summary>
+            
+            </summary>
+            <typeparam name="TComponent">The type of the component.</typeparam>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:JQChart.Web.Mvc.RangeAxis`2.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:JQChart.Web.Mvc.RangeAxis`2"/> class.
+            </summary>
+        </member>
+        <member name="M:JQChart.Web.Mvc.RangeAxis`2.Minimum(System.Nullable{System.Double})">
+            <summary>
+            Sets the range minimum.
+            </summary>
+            <remarks>
+            If the minimum is not set or null, it is calculated automatically.
+            </remarks>
+            <param name="minimum">The minimum.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.RangeAxis`2.Maximum(System.Nullable{System.Double})">
+            <summary>
+            Sets the range maximum.
+            </summary>
+            <remarks>
+            If the maximum is not set or null, it is calculated automatically.
+            </remarks>
+            <param name="maximum">The maximum.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.RangeAxis`2.Interval(System.Nullable{System.Double})">
+            <summary>
+            Sets the range interval.
+            </summary>
+            <remarks>
+            If the interval is not set or null, it is calculated automatically.
+            </remarks>
+            <param name="interval">The interval.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.RangeAxis`2.Logarithmic(System.Boolean)">
+            <summary>
+            Sets if the linear scale is logarithmic.
+            </summary>
+            <param name="logarithmic">if set to <c>true</c> the scale is logarithmic.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.RangeAxis`2.LogBase(System.Double)">
+            <summary>
+            Sets the logarithmic base.
+            </summary>
+            <param name="logBase">The logarithmic base.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.RangeAxis`2.ExtendRangeToOrigin(System.Boolean)">
+            <summary>
+            Sets if the range is extended to the origin.
+            </summary>
+            <param name="extendRangeToOrigin">if set to <c>true</c> range is extended to origin.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.LinearRadiusAxis`1.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:JQChart.Web.Mvc.LinearRadiusAxis`1"/> class.
+            </summary>
+        </member>
+        <member name="M:JQChart.Web.Mvc.LinearRadiusAxis`1.RenderStyle(JQChart.Web.Mvc.AreaRenderStyle)">
+            <summary>
+            Sets the render area shape.
+            </summary>
+            <param name="renderStyle">The render style.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.LinearRadiusAxis`1.InnerExtent(System.Nullable{System.Double})">
+            <summary>
+            Sets the inner extent.
+            </summary>
+            <param name="innerExtent">The inner extent.</param>
+            <returns></returns>
+        </member>
+        <member name="T:JQChart.Web.Mvc.AxesFactory`1">
+            <summary>
+            Creates axes for the <see cref="T:JQChart.Web.Mvc.Chart`1"/>.
+            </summary>
+            <typeparam name="T">The type of the chart model data item.</typeparam>
+        </member>
+        <member name="M:JQChart.Web.Mvc.AxesFactory`1.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:JQChart.Web.Mvc.AxesFactory`1"/> class.
+            </summary>
+        </member>
+        <member name="M:JQChart.Web.Mvc.AxesFactory`1.CategoryAxis(JQChart.Web.Mvc.Location)">
+            <summary>
+            Creates a Category Axis.
+            </summary>
+            <param name="location">The location of the axis.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.AxesFactory`1.LinearAxis(JQChart.Web.Mvc.Location)">
+            <summary>
+            Creates a Linear Axis.
+            </summary>
+            <param name="location">The location of the axis.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.AxesFactory`1.DateTimeAxis(JQChart.Web.Mvc.Location)">
+            <summary>
+            Creates a DateTime Axis.
+            </summary>
+            <param name="location">The location of the axis.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.AxesFactory`1.CategoryAngleAxis">
+            <summary>
+            Creates a Category Angle Axis.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.AxesFactory`1.LinearRadiusAxis">
+            <summary>
+            Creates a Linear Radius Axis.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:JQChart.Web.Mvc.RadialGradient">
+            <summary>
+            Describes a radial gradient.
+            </summary>
+        </member>
+        <member name="M:JQChart.Web.Mvc.RadialGradient.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:JQChart.Web.Mvc.RadialGradient"/> class.
+            </summary>
+        </member>
+        <member name="M:JQChart.Web.Mvc.RadialGradient.StartCircle(System.Double,System.Double,System.Double)">
+            <summary>
+            Sets the gradient start circle.
+            </summary>
+            <param name="x">The x.</param>
+            <param name="y">The y.</param>
+            <param name="r">The r.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.RadialGradient.EndCircle(System.Double,System.Double,System.Double)">
+            <summary>
+            Sets the gradient end circle.
+            </summary>
+            <param name="x">The x.</param>
+            <param name="y">The y.</param>
+            <param name="r">The r.</param>
+            <returns></returns>
+        </member>
+        <member name="T:JQChart.Web.Mvc.TickMarks">
+            <summary>
+            Defines the tick marks.
+            </summary>
+        </member>
+        <member name="M:JQChart.Web.Mvc.TickMarks.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:JQChart.Web.Mvc.TickMarks"/> class.
+            </summary>
+        </member>
+        <member name="M:JQChart.Web.Mvc.TickMarks.Length(System.Double)">
+            <summary>
+            Sets the length of the tick marks.
+            </summary>
+            <param name="length">The length.</param>
+            <returns></returns>
+        </member>
+        <member name="T:JQChart.Web.Mvc.StackedBarSeries`1">
+            <summary>
+            Defines the Stacked Bar Series.
+            </summary>
+            <typeparam name="T">The type of the chart model data item.</typeparam>
+        </member>
+        <member name="M:JQChart.Web.Mvc.StackedBarSeries`1.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:JQChart.Web.Mvc.StackedBarSeries`1"/> class.
+            </summary>
+        </member>
+        <member name="M:JQChart.Web.Mvc.StackedBarSeries`1.Markers(System.Action{JQChart.Web.Mvc.Markers})">
+            <summary>
+            Defines the series markers.
+            </summary>
+            <param name="config">The config.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.StackedBarSeries`1.Markers(System.Boolean)">
+            <summary>
+            Sets the series markers visibility.
+            </summary>
+            <param name="visible">if set to <c>true</c> the series markers are visible.</param>
+            <returns></returns>
+        </member>
+        <member name="T:JQChart.Web.Mvc.SplineSeries`1">
+            <summary>
+            Defines the Spline Series.
+            </summary>
+            <typeparam name="T">The type of the chart model data item.</typeparam>
+        </member>
+        <member name="M:JQChart.Web.Mvc.SplineSeries`1.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:JQChart.Web.Mvc.SplineSeries`1"/> class.
+            </summary>
+        </member>
+        <member name="T:JQChart.Web.Mvc.PaletteColors">
+            <summary>
+            Defines the chart pallete colors.
+            </summary>
+        </member>
+        <member name="M:JQChart.Web.Mvc.PaletteColors.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:JQChart.Web.Mvc.PaletteColors"/> class.
+            </summary>
+        </member>
+        <member name="M:JQChart.Web.Mvc.PaletteColors.PaletteColorsType(JQChart.Web.Mvc.PaletteColorsType)">
+            <summary>
+            Sets the palettes colors type.
+            </summary>
+            <param name="paletteColorsType">Type of the palette colors.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.PaletteColors.CustomColors(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Sets the custom colors.
+            </summary>
+            <param name="colors">The colors.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.PaletteColors.CustomColors(System.Collections.Generic.IEnumerable{System.Drawing.Color})">
+            <summary>
+            Sets the custom colors.
+            </summary>
+            <param name="colors">The colors.</param>
+            <returns></returns>
+        </member>
+        <member name="T:JQChart.Web.Mvc.MarkerType">
+            <summary>
+            Marker Type
+            </summary>
+        </member>
+        <member name="F:JQChart.Web.Mvc.MarkerType.Circle">
+            <summary>
+            Circle
+            </summary>
+        </member>
+        <member name="F:JQChart.Web.Mvc.MarkerType.Rectangle">
+            <summary>
+            Rectangle
+            </summary>
+        </member>
+        <member name="F:JQChart.Web.Mvc.MarkerType.Diamond">
+            <summary>
+            Diamond
+            </summary>
+        </member>
+        <member name="F:JQChart.Web.Mvc.MarkerType.Triangle">
+            <summary>
+            Triangle
+            </summary>
+        </member>
+        <member name="T:JQChart.Web.Mvc.CategoryAngleAxis`1">
+            <summary>
+            Defines the Category Angle Axis.
+            </summary>
+            <typeparam name="T">The type of the chart model data item.</typeparam>
+        </member>
+        <member name="M:JQChart.Web.Mvc.CategoryAngleAxis`1.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:JQChart.Web.Mvc.CategoryAngleAxis`1"/> class.
+            </summary>
+        </member>
+        <member name="M:JQChart.Web.Mvc.CategoryAngleAxis`1.Categories(System.Collections.IEnumerable)">
+            <summary>
+            Sets unbound categories.
+            </summary>
+            <param name="values">The values.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.CategoryAngleAxis`1.Categories(System.Linq.Expressions.Expression{System.Func{`0,System.Object}})">
+            <summary>
+            Sets bound categories.
+            </summary>
+            <param name="expression">The expression used to extract the categories from the chart model.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.CategoryAngleAxis`1.Width(System.Double)">
+            <summary>
+            Sets the width of the axis.
+            </summary>
+            <param name="width">The width.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.CategoryAngleAxis`1.Height(System.Double)">
+            <summary>
+            Sets the height of the axis.
+            </summary>
+            <param name="height">The height.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.CategoryAngleAxis`1.Margin(System.Double)">
+            <summary>
+            Sets the margin.
+            </summary>
+            <param name="margin">The margin.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.CategoryAngleAxis`1.MajorGridLines(System.Action{JQChart.Web.Mvc.GridLines})">
+            <summary>
+            Defines the major grid lines.
+            </summary>
+            <param name="config">The config.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.CategoryAngleAxis`1.MinorGridLines(System.Action{JQChart.Web.Mvc.GridLines})">
+            <summary>
+            Defines the minor grid lines.
+            </summary>
+            <param name="config">The config.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.CategoryAngleAxis`1.MajorTickMarks(System.Action{JQChart.Web.Mvc.TickMarks})">
+            <summary>
+            Defines the major tick marks.
+            </summary>
+            <param name="config">The config.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.CategoryAngleAxis`1.MinorTickMarks(System.Action{JQChart.Web.Mvc.TickMarks})">
+            <summary>
+            Defines the minor tick marks.
+            </summary>
+            <param name="config">The config.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.CategoryAngleAxis`1.Title(System.Action{JQChart.Web.Mvc.Title})">
+            <summary>
+            Defines the axis title.
+            </summary>
+            <param name="config">The config.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.CategoryAngleAxis`1.Title(System.String)">
+            <summary>
+            Sets the axis title.
+            </summary>
+            <param name="title">The title.</param>
+            <returns></returns>
+        </member>
+        <member name="T:JQChart.Web.Mvc.PieSeries`1">
+            <summary>
+            Defines the Pie Series.
+            </summary>
+            <typeparam name="T">The type of the chart model data item.</typeparam>
+        </member>
+        <member name="M:JQChart.Web.Mvc.PieSeries`1.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:JQChart.Web.Mvc.PieSeries`1"/> class.
+            </summary>
+        </member>
+        <member name="M:JQChart.Web.Mvc.PieSeries`1.DataLabels(System.Collections.IEnumerable)">
+            <summary>
+            Sets unbound data labels.
+            </summary>
+            <param name="values">The values.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.PieSeries`1.DataLabels(System.Linq.Expressions.Expression{System.Func{`0,System.Object}})">
+            <summary>
+            Sets bound data labels.
+            </summary>
+            <param name="expression">The expression used to extract the data label values from the chart model.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.PieSeries`1.DataValues(System.Collections.IEnumerable)">
+            <summary>
+            Sets unbound data values.
+            </summary>
+            <param name="values">The values.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.PieSeries`1.DataValues(System.Linq.Expressions.Expression{System.Func{`0,System.Object}})">
+            <summary>
+            Sets bound data values.
+            </summary>
+            <param name="expression">The expression used to extract the data values from the chart model.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.PieSeries`1.AxisX(System.String)">
+            <summary>
+            Sets the name of the X axis that this series belongs to.
+            </summary>
+            <param name="axisName">Name of the X axis that this series belongs to.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.PieSeries`1.AxisY(System.String)">
+            <summary>
+            Sets the name of the Y axis that this series belongs to.
+            </summary>
+            <param name="axisName">Name of the Y axis that this series belongs to.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.PieSeries`1.Markers(System.Action{JQChart.Web.Mvc.Markers})">
+            <summary>
+            Defines the series markers.
+            </summary>
+            <param name="config">The config.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.PieSeries`1.Markers(System.Boolean)">
+            <summary>
+            Sets the series markers visibility.
+            </summary>
+            <param name="visible">if set to <c>true</c> the series markers are visible.</param>
+            <returns></returns>
+        </member>
+        <member name="T:JQChart.Web.Mvc.RadarSplineAreaSeries`1">
+            <summary>
+            Defines the Radar Spline Area Series.
+            </summary>
+            <typeparam name="T">The type of the chart model data item.</typeparam>
+        </member>
+        <member name="M:JQChart.Web.Mvc.RadarSplineAreaSeries`1.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:JQChart.Web.Mvc.RadarSplineAreaSeries`1"/> class.
+            </summary>
+        </member>
+        <member name="T:JQChart.Web.Mvc.Border">
+            <summary>
+            Defines the border.
+            </summary>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Border.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:JQChart.Web.Mvc.Border"/> class.
+            </summary>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Border.StrokeStyle(System.String)">
+            <summary>
+            Sets the stroke style.
+            </summary>
+            <param name="color">The color.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Border.StrokeStyle(System.Drawing.Color)">
+            <summary>
+            Sets the stroke style.
+            </summary>
+            <param name="color">The color.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Border.LineWidth(System.Double)">
+            <summary>
+            Sets the line width.
+            </summary>
+            <param name="lineWidth">Width of the line.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Border.CornerRadius(System.Double)">
+            <summary>
+            Sets the corner radius.
+            </summary>
+            <param name="cornerRadius">The corner radius.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.Border.Padding(System.Double)">
+            <summary>
+            Sets the paddings.
+            </summary>
+            <param name="padding">The padding.</param>
+            <returns></returns>
+        </member>
+        <member name="T:JQChart.Web.Mvc.ColorExtensions">
+            <summary>
+            Color Extensions
+            </summary>
+        </member>
+        <member name="M:JQChart.Web.Mvc.ColorExtensions.ToHtml(System.Drawing.Color)">
+            <summary>
+            Converts a Color Struct to html string.
+            </summary>
+            <param name="color">The color.</param>
+            <returns></returns>
+        </member>
+        <member name="T:JQChart.Web.Mvc.CandlestickSeries`1">
+            <summary>
+            Defines the Candlestick Series.
+            </summary>
+            <typeparam name="T">The type of the chart model data item.</typeparam>
+        </member>
+        <member name="M:JQChart.Web.Mvc.CandlestickSeries`1.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:JQChart.Web.Mvc.CandlestickSeries`1"/> class.
+            </summary>
+        </member>
+        <member name="M:JQChart.Web.Mvc.CandlestickSeries`1.PriceDownFillStyle(System.String)">
+            <summary>
+            Sets the price down fill style.
+            </summary>
+            <param name="color">The color.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.CandlestickSeries`1.PriceDownFillStyle(System.Drawing.Color)">
+            <summary>
+            Sets the price down fill style.
+            </summary>
+            <param name="color">The color.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.CandlestickSeries`1.PriceDownFillStyle(System.Action{JQChart.Web.Mvc.GradientFactory})">
+            <summary>
+            Defines the price down fill style.
+            </summary>
+            <param name="config">The config.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.CandlestickSeries`1.PriceUpFillStyle(System.String)">
+            <summary>
+            Sets the price up fill style.
+            </summary>
+            <param name="color">The color.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.CandlestickSeries`1.PriceUpFillStyle(System.Drawing.Color)">
+            <summary>
+            Sets the price up fill style.
+            </summary>
+            <param name="color">The color.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.CandlestickSeries`1.PriceUpFillStyle(System.Action{JQChart.Web.Mvc.GradientFactory})">
+            <summary>
+            Defines the price up fill style.
+            </summary>
+            <param name="config">The config.</param>
+            <returns></returns>
+        </member>
+        <member name="T:JQChart.Web.Mvc.LinearAxis`1">
+            <summary>
+            Defines the Linear Axis.
+            </summary>
+            <typeparam name="T">The type of the chart model data item.</typeparam>
+        </member>
+        <member name="M:JQChart.Web.Mvc.LinearAxis`1.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:JQChart.Web.Mvc.LinearAxis`1"/> class.
+            </summary>
+        </member>
+        <member name="M:JQChart.Web.Mvc.LinearAxis`1.Crossing(System.Double)">
+            <summary>
+            Sets the axis crossing value.
+            </summary>
+            <param name="crossing">The crossing value.</param>
+            <returns></returns>
+        </member>
+        <member name="T:JQChart.Web.Mvc.AreaRenderStyle">
+            <summary>
+            Gets or sets the render area shape of Radar charts.
+            </summary>
+        </member>
+        <member name="F:JQChart.Web.Mvc.AreaRenderStyle.Circle">
+            <summary>
+            The area is rendered as a circle.
+            </summary>
+        </member>
+        <member name="F:JQChart.Web.Mvc.AreaRenderStyle.Polygon">
+            <summary>
+            The area is rendered as a polygon.
+            </summary>
+        </member>
+        <member name="T:JQChart.Web.Mvc.HtmlHelperExtensions">
+            <summary>
+            JQChart Helper Extensions
+            </summary>
+        </member>
+        <member name="M:JQChart.Web.Mvc.HtmlHelperExtensions.JQChart``1(System.Web.Mvc.HtmlHelper{``0})">
+            <summary>
+            The JQChart Suite
+            </summary>
+            <typeparam name="TModel">The type of the model.</typeparam>
+            <param name="helper">The helper.</param>
+            <returns></returns>
+        </member>
+        <member name="T:JQChart.Web.Mvc.SeriesFactory`1">
+            <summary>
+            Creates series for the <see cref="T:JQChart.Web.Mvc.Chart`1"/>.
+            </summary>
+            <typeparam name="T">The type of the chart model data item.</typeparam>
+        </member>
+        <member name="M:JQChart.Web.Mvc.SeriesFactory`1.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:JQChart.Web.Mvc.SeriesFactory`1"/> class.
+            </summary>
+        </member>
+        <member name="M:JQChart.Web.Mvc.SeriesFactory`1.Area">
+            <summary>
+            Creates an area chart series.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.SeriesFactory`1.Bar">
+            <summary>
+            Creates a bar chart series.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.SeriesFactory`1.Bubble">
+            <summary>
+            Creates a bubble chart series.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.SeriesFactory`1.Column">
+            <summary>
+            Creates a column chart series.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.SeriesFactory`1.Candlestick">
+            <summary>
+            Creates a candlestick chart series.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.SeriesFactory`1.Stock">
+            <summary>
+            Creates a stock chart series.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.SeriesFactory`1.Line">
+            <summary>
+            Creates a line chart series.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.SeriesFactory`1.Pie">
+            <summary>
+            Creates a pie chart series.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.SeriesFactory`1.Scatter">
+            <summary>
+            Creates a scatter chart series.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.SeriesFactory`1.SplineArea">
+            <summary>
+            Creates a spline area chart series.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.SeriesFactory`1.Spline">
+            <summary>
+            Creates a spline chart series.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.SeriesFactory`1.StackedBar">
+            <summary>
+            Creates a stacked bar chart series.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.SeriesFactory`1.StackedColumn">
+            <summary>
+            Creates a stacked column chart series.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.SeriesFactory`1.RadarLine">
+            <summary>
+            Creates a radar line chart series.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.SeriesFactory`1.RadarSpline">
+            <summary>
+            Creates a radar spline chart series.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.SeriesFactory`1.RadarArea">
+            <summary>
+            Creates a radar area chart series.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.SeriesFactory`1.RadarSplineArea">
+            <summary>
+            Creates a radar spline area chart series.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:JQChart.Web.Mvc.BubbleSeries`1">
+            <summary>
+            Defines the Bubble Series.
+            </summary>
+            <typeparam name="T">The type of the chart model data item.</typeparam>
+        </member>
+        <member name="M:JQChart.Web.Mvc.BubbleSeries`1.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:JQChart.Web.Mvc.BubbleSeries`1"/> class.
+            </summary>
+        </member>
+        <member name="M:JQChart.Web.Mvc.BubbleSeries`1.SizeValues(System.Collections.IEnumerable)">
+            <summary>
+            Sets unbound size values.
+            </summary>
+            <param name="values">The values.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JQChart.Web.Mvc.BubbleSeries`1.SizeValues(System.Linq.Expressions.Expression{System.Func{`0,System.Object}})">
+            <summary>
+            Sets bound size values.
+            </summary>
+            <param name="expression">The expression used to extract the size values from the chart model.</param>
+            <returns></returns>
+        </member>
+        <member name="T:JQChart.Web.Mvc.DataPointLabels">
+            <summary>
+            Defines the data point labels.
+            </summary>
+        </member>
+        <member name="M:JQChart.Web.Mvc.DataPointLabels.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:JQChart.Web.Mvc.DataPointLabels"/> class.
+            </summary>
+        </member>
+        <member name="M:JQChart.Web.Mvc.DataPointLabels.ValueType(JQChart.Web.Mvc.LabelValueType)">
+            <summary>
+            Sets the value type.
+            </summary>
+            <param name="valueType">Type of the value.</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
