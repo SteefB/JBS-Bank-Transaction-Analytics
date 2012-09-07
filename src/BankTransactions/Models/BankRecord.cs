@@ -83,67 +83,11 @@ namespace nl.jorncruijsen.jbs.transactions
 
         public BankRecord(string[] args)
         {
-            if (args.Length != 16)
-            {
-                throw new ArgumentException("Corrupt record, please fix.");
-            }
-
-            // First value is the bank number
-            BankNum = args[0];
-
-            // Second value is the currency
-            Currency = args[1];
-
-            // Third value is the request date
-            RequestDate = parseDate(args[2]);
-
-            // Fourth value is the type of transaction // TODO: Refactor neatly
-            Type = args[3] == "C" ? TransactionType.CREDIT : TransactionType.DEBIT;
-
-            // Fifth value is the transferred amount
-            Amount = Double.Parse(args[4], new CultureInfo("en-US"));
-
-            // Sixth value is the other bank account number (or zeroes if there is none)
-            OtherBankNumber = args[5];
-
-            // Seventh value is the other bank account name
-            Name = args[6].Replace('&', '|');
-
-            // Eigth value is the execution date
-            ExecutionDate = parseDate(args[7]);
-
-            // Ninth value is some kind of abbreviation for some magical thing
-            TransactionCategory cat;
-            Enum.TryParse<TransactionCategory>(args[8].ToUpper(), out cat);
-            Category = cat;
-
-            // Tenth value appears to always be empty..
-            Unknown = args[9];
-
-            // Eleven to sixteen is the description (which could include transaction identifiers and/or exchange rates)
-            Description1 = args[10];
-            Description2 = args[11];
-            Description3 = args[12];
-            Description4 = args[13];
-            Description5 = args[14];
-            Description6 = args[15];
-
-            // System.out.printf(dinger + "\n", (Object[]) args);
         }
 
         public override string ToString()
         {
             return string.Format("Record amounts to EUR {1}, sent to {3}, is labelled [{2}] and was created on {0} and la", RequestDate.ToString(), Amount, Description, Name);
-        }
-
-        private DateTime parseDate(string date)
-        {
-            if (date.Length != 8)
-            {
-                throw new ArgumentException("Corrupt date string: " + date);
-            }
-
-            return new DateTime(Int16.Parse(date.Substring(0, 4)), Int16.Parse(date.Substring(4, 2)), Int16.Parse(date.Substring(6, 2)));
         }
     }
 }

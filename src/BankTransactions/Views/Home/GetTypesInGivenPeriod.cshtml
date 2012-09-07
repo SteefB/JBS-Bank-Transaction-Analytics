@@ -1,0 +1,37 @@
+﻿@using nl.jorncruijsen.jbs.transactions
+@model BankTransactions.Models.ModelGetTypesInGivenPeriod
+
+@{
+    ViewBag.Title = "Define the banking overview by selecting dates";
+}
+
+
+<h2>Bank transactions</h2>
+
+<p>Listing all transactions in a given period grouped by type </p>
+@*  TODO make the textboxes listen to an onchangelistener *@
+<h3>Startdate </h3>
+@Html.TextBox("StartDate", Model.startDate.ToString("dd/MM/yyyy"))
+<h3>End Date</h3>
+ @Html.TextBox("EndDate", Model.endDate.ToString("dd/MM/yyyy")) 
+
+
+@foreach (IGrouping<string, BankRecord> group in Model.bankrecords)
+{    
+    @Html.Partial("Partials/GroupedTransactionTable", group);
+}
+<script type ="text/javascript">
+    $(document).ready(function () {
+        $("#StartDate").datepicker();
+        $("#EndDate").datepicker();
+        $("#StartDate").change(function () {
+            alert($("#StartDate").val());
+        });
+ 
+        $("#EndDate").change(function () {
+            alert($("#EndDate").val());
+           //Do something with async post to controller
+        });
+    });
+
+</script>

@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "AddFIle";
+}
+
+<h2>File merger</h2>
+
+<h4>Merge result:</h4>
+
+<p>The files have been <span class="highlight">SUCCESS</span>fully merged.
+
+<h4>Global information</h4>
+
+<p>We are currently using this file: <span class="highlight">@ViewData["ResourceFolder"]</span></p>
+
+<p>We're told this file is of type: <span class="highlight">@ViewData["ResourceType"]</span></p>
+
+<p>We found <span class="highlight">@ViewData["NumLines"]</span> lines in this file, <span class="highlight">@ViewData["NumRecords"]</span> of which have been identified as valid transaction records.</p>
+
+<h4>Merge report</h4>
+
+<p>We attempted to merge the existing file with the file you passed us.</p>
+
+<p>In your file, we encountered <span class="highlight">@ViewData["NewFileNumLines"]</span> lines.</p>
+
+<p><span class="highlight">@ViewData["NewFileNumRecords"]</span> of these lines could be parsed as bank transaction records.</p>
+
+<p>While merging the file, we found <span class="highlight">@Math.Abs((int)ViewData["CombinedFileNumLines"] - (int)ViewData["NumLines"] - (int)ViewData["NewFileNumLines"])</span> duplicate lines.</p>
+
+<p>In total, we added <span class="highlight">@((int)ViewData["CombinedFileNumLines"] - (int)ViewData["NumLines"])</span> new records to the resource file.</p>
+
+<p>The new resource contains <span class="highlight">@ViewData["CombinedFileNumLines"]</span> lines, <span class="highlight">@ViewData["CombinedFileNumRecords"]</span> of which have been identified as valid transaction records.</p>
+
+<h4>Navigation</h4>
+
+<p>Click @Html.ActionLink("here", "Index") to go back to the configuration page.</p>

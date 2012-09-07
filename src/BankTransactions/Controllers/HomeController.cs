@@ -7,6 +7,7 @@ using System.Collections.ObjectModel;
 using nl.jorncruijsen.jbs.transactions;
 using Microsoft.VisualBasic.FileIO;
 using JQChart.Web;
+using BankTransactions.Models;
 
 namespace BankTransactions.Controllers
 {
@@ -105,5 +106,49 @@ namespace BankTransactions.Controllers
 
             return View(selection);
         }
+
+        # region GetTypesInGivenPeriod
+        [HttpGet]
+        public ActionResult GetTypesInGivenPeriod() // give all transactions from past year as default
+        {
+            ModelGetTypesInGivenPeriod model = new ModelGetTypesInGivenPeriod
+            {
+                startDate = DateTime.Now.AddYears(-1),
+                endDate = DateTime.Now
+            };
+            //retrieve all transactions
+            IEnumerable<BankRecord> rec = RecordRetriever.GetBankRecords();
+            // select between dates            
+            rec = rec.Where(r => r.RequestDate >= model.startDate && r.RequestDate <= model.endDate);
+            // group the selection
+            IOrderedEnumerable<IGrouping<string, BankRecord>> selection = rec.GroupBy(r => r.Category.ToString()).OrderByDescending(g => g.Sum(r => r.Amount));
+
+            model.bankrecords = selection;
+
+            return View(model);
+        }
+        [HttpPost]
+        public ActionResult GetTypesInGivenPeriod(DateTime startDate, DateTime endDate) 
+        {
+            //retrieve all transactions
+            IEnumerable<BankRecord> rec = RecordRetriever.GetBankRecords();
+            // select between dates            
+            rec = rec.Where(r => r.RequestDate >= startDate && r.RequestDate <= endDate);
+            // group the selection
+            IOrderedEnumerable<IGrouping<string, BankRecord>> selection = rec.GroupBy(r => r.Category.ToString()).OrderByDescending(g => g.Sum(r => r.Amount));
+            
+            ModelGetTypesInGivenPeriod model = new ModelGetTypesInGivenPeriod
+            {
+                startDate = startDate,
+                endDate = endDate,
+                bankrecords = selection
+            };
+
+            // end of testing
+            return View(model);
+        }
+        #endregion
+
+
     }
 }
