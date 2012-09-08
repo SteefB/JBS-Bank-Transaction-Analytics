@@ -45,7 +45,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="JQChart.Web.Mvc">
-      <HintPath>..\..\..\..\..\Desktop\bin\Mvc3\JQChart.Web.Mvc.dll</HintPath>
+      <HintPath>lib\JQChart.Web.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.VisualBasic" />
