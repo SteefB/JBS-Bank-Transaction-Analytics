@@ -189,14 +189,22 @@ td.highlight
     font-weight: bold;
 }
 
-.gain 
+.gain td
 {
-    background-color: Honeydew;   
+    color: #000;   
 }
 
-.gone 
+.gain td a
 {
-    background-color: MistyRose;
+    color: #000;   
+}
+
+.gone td
+{
+    color: RED;
+}
+.gone td a {
+    color: RED;
 }
 
 .hide_row 
@@ -279,4 +287,7 @@ td.highlight
 }
 #accordion a:hover {
     text-decoration: underline;
+}
+.even {
+    background-color: HoneyDew;
 }
