@@ -48,11 +48,8 @@
         }
         $(document).ready(function () {
             $("#accordion > li > div").click(function () {
-<<<<<<< HEAD
                 $("#accordion > li > div").removeClass("opened");
                 $(this).addClass("opened");
-=======
->>>>>>> 551db22ffd50b6c291fe04ef430699884805701a
                 if (false == $(this).next().is(':visible')) {
                     $('#accordion ul').slideUp(1);
                 }
@@ -78,17 +75,6 @@
                 <li>
                     <div>Transactions</div>
                     <ul>
-<<<<<<< HEAD
-                        <li>@Html.RouteLink("All transactions", new { Controller = "Home", Action = "All" })</li>
-                        <li>@Html.RouteLink("Overview per group", new { Controller = "Home", Action = "Overview" })</li>
-                        <li>@Html.RouteLink("Overview per month", new { Controller = "Home", Action = "Monthly" })</li>
-                        <li>@Html.RouteLink("Overview per type", new { Controller = "Home", Action = "Types" })</li>
-                        <li>@Html.RouteLink("Overview per type in user-defined period", new { Controller = "Home", Action = "GetTypesInGivenPeriod" })</li>
-                        <li>@Html.RouteLink("Past 7 days", new { Controller = "Home", Action = "Recent" })</li>
-                        <li>@Html.RouteLink("Money statistics", new { Controller = "Home", Action = "Stats" })</li>
-                        <li>@Html.RouteLink("ATM Transactions", new { Controller = "Home", Action = "ATM" })</li>
-                        <li>@Html.RouteLink("PoS Payment Transactions", new { Controller = "Home", Action = "PoS" })</li>
-=======
                         <li>@Ajax.ActionLink("All transactions", null, new { Controller = "Home", Action = "All" }, new AjaxOptions() { UpdateTargetId = "content" })</li>
                         <li>@Ajax.ActionLink("Overview per group", null, new { Controller = "Home", Action = "Overview" }, new AjaxOptions() { UpdateTargetId = "content" })</li>
                         <li>@Ajax.ActionLink("Overview per month", null, new { Controller = "Home", Action = "Monthly" }, new AjaxOptions() { UpdateTargetId = "content" })</li>
@@ -98,48 +84,22 @@
                         <li>@Ajax.ActionLink("Money statistics", null, new { Controller = "Home", Action = "Stats" }, new AjaxOptions() { UpdateTargetId = "content" })</li>
                         <li>@Ajax.ActionLink("ATM Transactions", null, new { Controller = "Home", Action = "ATM" }, new AjaxOptions() { UpdateTargetId = "content" })</li>
                         <li>@Ajax.ActionLink("PoS Payment Transactions", null, new { Controller = "Home", Action = "PoS" }, new AjaxOptions() { UpdateTargetId = "content" })</li>
->>>>>>> 551db22ffd50b6c291fe04ef430699884805701a
                     </ul>
                 </li>
                 <li>
                     <div>Charts</div>
                     <ul>
-<<<<<<< HEAD
-                        <li>@Html.RouteLink("Global charts", new { Controller = "Home", Action = "Charts" })</li>
-=======
                         <li>@Ajax.ActionLink("Global charts", null, new { Controller = "Home", Action = "Charts" }, new AjaxOptions() { UpdateTargetId = "content" })</li>
-
->>>>>>> 551db22ffd50b6c291fe04ef430699884805701a
                     </ul>
                 </li>
                 <li>
                     <div>Miscellaneous</div>
                     <ul>
-<<<<<<< HEAD
-                        <li>@Html.RouteLink("Modify settings", new { Controller = "Resource", Action = "Index" })</li>
-                        <li>@Html.RouteLink("System information", new { Controller = "Home", Action = "Author" })</li>
 
-
-
-                    </ul>
-                </li>
-                <li>
-                    <div>People</div>
-                    <ul>
-
-
-
-                        <li>@Html.RouteLink("Jorn Cruijsen", new { Controller = "Home", Action = "Index", Account = "Jorn" })</li>
-                        <li>@Html.RouteLink("Alexander Kersten", new { Controller = "Home", Action = "Index", Account = "Alexander" })</li>
-
-                    </ul>
-                </li>
-=======
                         <li>@Ajax.ActionLink("System information", null, new { Controller = "Home", Action = "Author" }, new AjaxOptions() { UpdateTargetId = "content" })</li>
                     </ul>
                 </li>
             </ul>
->>>>>>> 551db22ffd50b6c291fe04ef430699884805701a
         </div>
         <div id="content_container">
             <div id="content">
