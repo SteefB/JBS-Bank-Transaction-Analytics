@@ -256,16 +256,22 @@ td.highlight
 }
 #accordion div {
     display: block;
-    background-color: #FF9927;
+    /*background-color: #FF9927;*/
     font-weight: bold;
     margin: 1px;
     cursor: pointer;
-    padding: 5px 5px 5px     7px;
-    list-style: circle;
-    -moz-border-radius: 10px;
+    background-image:url('img/plus_icon.png'); 
+    background-position:left,center;
+    background-repeat:no-repeat;
+    padding: 5px 5px 5px 27px;    
+  /*  -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
-    border-radius: 10px;
+    border-radius: 10px;*/
+        
     width: 220px;
+}
+#accordion .opened {
+    background-image:url('img/minus_icon.png'); 
 }
 #accordion ul {
     list-style: none;
@@ -287,6 +293,9 @@ td.highlight
 }
 #accordion a:hover {
     text-decoration: underline;
+}
+#accordion a bold {
+    font-weight: bold;
 }
 .even {
     background-color: HoneyDew;
