@@ -9,7 +9,8 @@
 <h2>Options</h2>
 
 <h4>Account configuration</h4>
-<p>@Ajax.ActionLink("Modify settings",null, new { Controller = "Resource", Action = "Index" },new AjaxOptions(){ InsertionMode=InsertionMode.Replace, Url = "#", OnSuccess= "$('#content').val(" + Response+")" })</p>
+
+<p>@Ajax.ActionLink("Test", null, new { Controller = "Resource", Action = "Index" }, new AjaxOptions() { UpdateTargetId = "content" })</p>
 
 <h4>Overall transaction information</h4>
 <p>@Html.RouteLink("All transactions", new { Controller = "Home", Action = "All" })</p>
@@ -29,8 +30,3 @@
 
 <h4>Info</h4>
 <p>@Html.RouteLink("System information", new { Controller = "Home", Action = "Author" })</p>
-
-@*<h4>People</h4>
-<p>@Html.RouteLink("Jorn Cruijsen", new { Controller = "Home", Action = "Index", Account = "Jorn" })</p>
-<p>@Html.RouteLink("Alexander Kersten", new { Controller = "Home", Action = "Index", Account = "Alexander" })</p>*@
-

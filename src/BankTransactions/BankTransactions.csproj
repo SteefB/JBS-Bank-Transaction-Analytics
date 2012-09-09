@@ -104,6 +104,8 @@
     <Compile Include="Models\ModelGetTypesInGivenPeriod.cs" />
     <Compile Include="Models\TimePeriodGroup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Content Include="Scripts\Custom\UglyCode.js" />
+    <Content Include="Scripts\Google\jsapi.js" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\jquery.jqChart.css" />
