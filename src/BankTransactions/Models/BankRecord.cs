@@ -87,7 +87,7 @@ namespace nl.jorncruijsen.jbs.transactions
 
         public override string ToString()
         {
-            return string.Format("Record amounts to EUR {1}, sent to {3}, is labelled [{2}] and was created on {0} and la", RequestDate.ToString(), Amount, Description, Name);
+            return string.Format("Record amounts to EUR {1}, sent to {3}, is labelled [{2}] and was created on {0}", RequestDate.ToString(), Amount, Description, Name);
         }
     }
 }

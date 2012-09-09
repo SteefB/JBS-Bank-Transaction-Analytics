@@ -9,6 +9,9 @@
 <h4>Account configuration</h4>
 <p>@Html.RouteLink("Modify settings", new { Controller = "Resource", Action = "Index" })</p>
 
+
+<p>@Ajax.ActionLink("Test", "All", new { }, new AjaxOptions() { UpdateTargetId = "content" })</p>
+
 <h4>Overall transaction information</h4>
 <p>@Html.RouteLink("All transactions", new { Controller = "Home", Action = "All" })</p>
 <p>@Html.RouteLink("Overview per group", new { Controller = "Home", Action = "Overview" })</p>
