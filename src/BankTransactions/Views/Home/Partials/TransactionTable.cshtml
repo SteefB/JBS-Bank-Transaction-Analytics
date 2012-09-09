@@ -13,8 +13,9 @@
         string type = record.Type.Equals(BankRecord.TransactionType.CREDIT) ? "gain" : "gone";
 
         string visibility = (counter++ > 5) ? "hide_row" : "";
+        string odd_or_even = (counter % 2 == 1) ? "odd" : "even"; 
             
-        <tr class="@type @visibility">
+        <tr class="@type @visibility @odd_or_even">
             <td>@record.RequestDate.ToString("dd-MM-yyyy")</td>
             <td>@string.Format("{0:C}", record.Amount)</td>
             <td>@Html.RouteLink(record.Name, new { Controller = "Home", Action = "Details", Name = record.Name})</td>
