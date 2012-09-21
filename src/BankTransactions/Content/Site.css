@@ -69,20 +69,21 @@ body {
 	position: relative;
     margin-bottom: -108px;   
 }
-
-#footer {
-    margin-left: 125px;
-	float: left;
+#footer_container {
+    width:100%;
+    margin: 0 auto;
+    float: left;
     height: 80px;
-    border-bottom:none;
-	//margin-top: -80px;
-	width: 1080px;
-	bottom: 0px;
-    margin: 0 0 0 125px;
- 
 }
 
-#inner_footer {
+#footer {
+    margin: 0 auto;
+    border-bottom:none;	
+	width: 1100px;   
+	bottom: 0px;
+}
+
+#inner_footer {    
 	padding: 20px 25px 25px 20px;
 	border-top-left-radius: 10px;
 	border-top-right-radius: 10px;
@@ -93,12 +94,13 @@ body {
 	background-color: #fff;
 	text-align: right;
 	position: absolute;
-	width: 720px;
+	width: 717px;
 	height: 30px;
-    margin-left: 308px;
-       
-	box-shadow: 0px 0px 20px #000;
+    position: relative;
+    box-shadow: 0px 0px 20px #000;
 	-moz-box-shadow: 0px 0px 20px #000;
+    margin:0px auto;
+    margin-left:310px;	
 }
 
 #content_container {
