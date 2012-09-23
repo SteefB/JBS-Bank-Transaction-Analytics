@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Globalization;
 
-namespace nl.jorncruijsen.jbs.transactions
+namespace nl.jbs.banktransactions
 {
     public class BankRecord
     {

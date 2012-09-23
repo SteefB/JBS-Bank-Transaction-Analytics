@@ -1,4 +1,5 @@
-﻿using nl.jorncruijsen.jbs.transactions;
+﻿
+using nl.jbs.banktransactions;
 using System;
 using System.Collections.Generic;
 using System.Linq;

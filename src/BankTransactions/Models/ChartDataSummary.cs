@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using nl.jorncruijsen.jbs.transactions;
+using nl.jbs.banktransactions;
 
-namespace nl.jorncruijsen.jbs.transactions
+namespace nl.jbs.banktransactions
 {
     public class ChartDataSummary
     {

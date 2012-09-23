@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Collections.ObjectModel;
-using nl.jorncruijsen.jbs.transactions;
+using nl.jbs.banktransactions;
 using Microsoft.VisualBasic.FileIO;
 using JQChart.Web;
 using BankTransactions.Models;
@@ -21,7 +21,7 @@ namespace BankTransactions.Controllers
             return View(selection);
         }
 
-        public ActionResult ATM()
+        public ActionResult ATM() 
         {
             IEnumerable<BankRecord> selection = RecordRetriever.GetBankRecords().Where(r => r.Description.Contains("Geldautomaat"));
 

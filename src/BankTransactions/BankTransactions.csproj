@@ -87,6 +87,8 @@
     <Compile Include="Controllers\Adapters\TransactionAdapter.cs" />
     <Compile Include="Controllers\Adapters\TransactionAdapterRabobank.cs" />
     <Compile Include="Controllers\Adapters\Factory\TransactionAdapterType.cs" />
+    <Compile Include="Controllers\ChartController.cs" />
+    <Compile Include="Controllers\Charts\GoogleChartDataTableProvider.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\Config\ConfigurationManager.cs" />
     <Compile Include="Controllers\Config\NoSuchSettingException.cs" />
@@ -104,15 +106,13 @@
     <Compile Include="Models\ModelGetTypesInGivenPeriod.cs" />
     <Compile Include="Models\TimePeriodGroup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Content Include="Scripts\Custom\UglyCode.js" />
-    <Content Include="Scripts\Google\jsapi.js" />
+    <Content Include="Scripts\Custom\jbs-google.js" />
+    <Content Include="Scripts\Custom\jbs-general.js" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\jquery.jqChart.css" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\excanvas.js" />
     <Content Include="Scripts\jquery-1.5.1.min.js" />
-    <Content Include="Scripts\jquery.jqChart.min.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -168,16 +168,10 @@
     <Content Include="Views\Home\Overview.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Home\Partials\TransactionTable.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\Home\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\Index.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Home\Partials\GroupedTransactionTable.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\Monthly.cshtml" />
@@ -201,13 +195,19 @@
     <Content Include="Views\Home\Types.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Home\Partials\Chart.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\Resource\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\GetTypesInGivenPeriod.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Partials\GoogleChart.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Partials\GroupedTransactionTable.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Partials\TransactionTable.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
