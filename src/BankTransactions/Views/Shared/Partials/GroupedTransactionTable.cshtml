@@ -1,0 +1,9 @@
+﻿@using nl.jbs.banktransactions
+
+@model IGrouping<object, BankRecord>
+
+<h4>@Model.Key.ToString()</h4>
+<p>Total amount: @string.Format("{0:C}", Model.Sum(r => r.Type.Equals(BankRecord.TransactionType.DEBIT) ? r.Amount * -1 : r.Amount))</p>
+<p>Number of transactions: @Model.Count()</p>
+    
+@Html.Partial("Partials/TransactionTable", Model)

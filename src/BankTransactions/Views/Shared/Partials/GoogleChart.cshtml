@@ -1,0 +1,16 @@
+﻿@using JQChart.Web.Mvc
+@using nl.jbs.banktransactions;
+@using BankTransactions.Controllers.Charts;
+
+@* TODO Create strongly typed custom model for charting partial *@
+
+@model IEnumerable<BankRecord>
+
+@{string chartData = GoogleChartDataTableProvider.GetChartDataFor(Model);}
+@{string chartOptions = GoogleChartDataTableProvider.GetChartOptionsFor(string.Empty, 700, 500);}
+           
+@{int transactionCounter = (int)(HttpContext.Current.Items.Contains("TransactionCounter") ? ((int)HttpContext.Current.Items["TransactionCounter"]) : 0);}
+
+<div id="transactionChart_@(transactionCounter)">
+    <p class="showMoreToggleButton" onclick="drawChart(@transactionCounter, @chartData, @chartOptions )">Draw me a chart...</p>
+</div>
