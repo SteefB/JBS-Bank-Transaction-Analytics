@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using System.IO;
 using System.Xml;
 using System.Xml.Serialization;
-using System.IO;
 
 namespace BankTransactions.Controllers.Util
 {
@@ -14,7 +11,7 @@ namespace BankTransactions.Controllers.Util
         {
             XmlSerializer serializer = new XmlSerializer(typeof(T));
 
-            using(Stream stream = new FileStream(fileName, FileMode.OpenOrCreate, FileAccess.Write))
+            using (Stream stream = new FileStream(fileName, FileMode.OpenOrCreate, FileAccess.Write))
             {
                 using (XmlWriter xmlWriter = XmlWriter.Create(stream))
                 {

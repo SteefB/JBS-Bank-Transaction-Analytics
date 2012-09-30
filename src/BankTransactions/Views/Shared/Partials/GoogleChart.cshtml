@@ -6,7 +6,7 @@
 
 @model IEnumerable<BankRecord>
 
-@{string chartData = GoogleChartDataTableProvider.GetChartDataFor(Model);}
+@{string chartData = GoogleChartDataTableProvider.GetBasicChartDataFor(Model);}
 @{string chartOptions = GoogleChartDataTableProvider.GetChartOptionsFor(string.Empty, 700, 500);}
            
 @{int transactionCounter = (int)(HttpContext.Current.Items.Contains("TransactionCounter") ? ((int)HttpContext.Current.Items["TransactionCounter"]) : 0);}

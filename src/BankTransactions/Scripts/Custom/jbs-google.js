@@ -6,7 +6,7 @@ function drawChart(transactionGroup, data, options) {
 
     // Instantiate and draw the chart
     var wrapper = new google.visualization.ChartWrapper({
-        chartType: 'ColumnChart',
+        chartType: 'ComboChart',
         dataTable: data,
         options: options,
         containerId: "transactionChart_" + transactionGroup

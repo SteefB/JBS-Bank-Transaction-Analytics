@@ -1,15 +1,8 @@
-﻿using System;
+﻿using BankTransactions.Controllers.Adapters;
+using BankTransactions.Controllers.Util;
+using nl.jbs.banktransactions;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using nl.jbs.banktransactions;
-using Microsoft.VisualBasic.FileIO;
-using System.Collections.ObjectModel;
-using BankTransactions.Controllers.Adapters;
-using System.Xml;
-using System.Xml.Serialization;
-using System.IO;
-using BankTransactions.Controllers.Util;
 
 namespace BankTransactions.Controllers
 {

@@ -88,10 +88,13 @@
     <Compile Include="Controllers\Adapters\TransactionAdapterRabobank.cs" />
     <Compile Include="Controllers\Adapters\Factory\TransactionAdapterType.cs" />
     <Compile Include="Controllers\ChartController.cs" />
+    <Compile Include="Controllers\Charts\GoogleChartRow.cs" />
+    <Compile Include="Controllers\Charts\GoogleChartDataTableWrapper.cs" />
     <Compile Include="Controllers\Charts\GoogleChartDataTableProvider.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\Config\ConfigurationManager.cs" />
     <Compile Include="Controllers\Config\NoSuchSettingException.cs" />
+    <Compile Include="Controllers\Util\BankRecordUtil.cs" />
     <Compile Include="Controllers\Util\RecordRetriever.cs" />
     <Compile Include="Controllers\ResourceController.cs" />
     <Compile Include="Controllers\Util\CSVMerger.cs" />
@@ -229,7 +232,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>9191</DevelopmentServerPort>
+          <DevelopmentServerPort>51041</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

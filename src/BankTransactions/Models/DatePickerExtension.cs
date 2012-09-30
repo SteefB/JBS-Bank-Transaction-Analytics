@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace System.Web.Mvc.Html
+﻿namespace System.Web.Mvc.Html
 {
     public static class DatePickerExtension
     {

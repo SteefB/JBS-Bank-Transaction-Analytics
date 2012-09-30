@@ -1,13 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace nl.jbs.banktransactions
 {
     public class TimePeriodGroup : IComparable<TimePeriodGroup>
     {
         public int Month { get; set; }
+
         public int Year { get; set; }
 
         public TimePeriodGroup(DateTime date)
@@ -18,9 +16,10 @@ namespace nl.jbs.banktransactions
 
         /**
          * Used to group this object
-         * 
+         *
          * TODO: Find proper way to do that
          **/
+
         public override string ToString()
         {
             return Year + "/" + string.Format("{0:00}", Month);

@@ -29,6 +29,10 @@
             <div id="content_menu">
                 <ul id="accordion">
                     <li>
+                        <div>Configuration</div>
+                        <ul>
+                            <li>@Ajax.ActionLink("Root file", null, new { Controller = "Resource", Action = "Index" }, new AjaxOptions() { UpdateTargetId = "content" })</li>
+                        </ul>
                         <div>Transactions</div>
                         <ul>
                             <li>@Ajax.ActionLink("All transactions", null, new { Controller = "Home", Action = "All" }, new AjaxOptions() { UpdateTargetId = "content" })</li>

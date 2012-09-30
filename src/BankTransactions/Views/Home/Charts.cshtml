@@ -2,8 +2,6 @@
 @using nl.jbs.banktransactions
 
 @model ChartDataSummary
-
-
 @{
     ViewBag.Title = "Charts";
 }
@@ -38,7 +36,7 @@
                                        .Markers(false);
                     }
                 )
-                .Render() 
+                .Render()
           )
 
 <p>Accumulated credit/debit</p>
@@ -59,7 +57,7 @@
                                        .YValues(el => el.Value2);
                     }
                 )
-                .Render() 
+                .Render()
           )
 
 <h4>Funds</h4>
@@ -87,7 +85,7 @@
                                        .YValues(el => el.Value5);
                     }
                 )
-                .Render() 
+                .Render()
           )
 
 <p>Funding per transaction</p>
@@ -120,7 +118,7 @@
                                        .LineWidth(2);
                     }
                 )
-                .Render() 
+                .Render()
           )
 
 <h4>Radar charts</h4>
@@ -135,17 +133,17 @@
                 .Title("2011 Spending")
                 .Series(series =>
                 {
-                        series.RadarLine().Title("Debit")
-                                        .XValues(el => el.Label)
-                                        .YValues(el => el.Value1)
-                                        .LineWidth(5);
-                        series.RadarLine().Title("Credit")
-                                        .XValues(el => el.Label)
-                                        .YValues(el => el.Value2)
-                                        .LineWidth(5);
-                    }
+                    series.RadarLine().Title("Debit")
+                                    .XValues(el => el.Label)
+                                    .YValues(el => el.Value1)
+                                    .LineWidth(5);
+                    series.RadarLine().Title("Credit")
+                                    .XValues(el => el.Label)
+                                    .YValues(el => el.Value2)
+                                    .LineWidth(5);
+                }
                 )
-                .Render() 
+                .Render()
           )
 
 <p>2012</p>
@@ -158,14 +156,14 @@
                 .Title("2012 Spending")
                 .Series(series =>
                     {
-                            series.RadarLine().Title("Debit")
-                                            .XValues(el => el.Label)
-                                            .YValues(el => el.Value1)
-                                            .LineWidth(5);
-                            series.RadarLine().Title("Credit")
-                                            .XValues(el => el.Label)
-                                            .YValues(el => el.Value2)
-                                            .LineWidth(5);
+                        series.RadarLine().Title("Debit")
+                                        .XValues(el => el.Label)
+                                        .YValues(el => el.Value1)
+                                        .LineWidth(5);
+                        series.RadarLine().Title("Credit")
+                                        .XValues(el => el.Label)
+                                        .YValues(el => el.Value2)
+                                        .LineWidth(5);
                     }
                 )
                 .Render()

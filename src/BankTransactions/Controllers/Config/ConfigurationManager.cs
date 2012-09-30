@@ -1,8 +1,7 @@
-﻿using System;
+﻿using BankTransactions.Controllers.Adapters;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using BankTransactions.Controllers.Adapters;
 
 namespace BankTransactions.Controllers.Util
 {

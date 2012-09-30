@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using BankTransactions.Controllers.Adapters;
+using BankTransactions.Controllers.Util;
+using System;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using BankTransactions.Controllers.Util;
-using BankTransactions.Controllers.Adapters;
 
 namespace BankTransactions.Controllers
 {
@@ -30,6 +29,7 @@ namespace BankTransactions.Controllers
         /**
          * Updates the root file type
          **/
+
         public ActionResult UpdateRootFileType(string newResourceType)
         {
             // Get current and parse new type
@@ -37,7 +37,8 @@ namespace BankTransactions.Controllers
             TransactionAdapterType newType = (TransactionAdapterType)Enum.Parse(typeof(TransactionAdapterType), newResourceType);
 
             // Check equality
-            if(!currentType.Equals(newType)) {
+            if (!currentType.Equals(newType))
+            {
                 // Save type to settings
                 ConfigurationManager.UpdateSettingValue(ConfigurationManager.FileTypeKey, newType);
             }
@@ -49,6 +50,7 @@ namespace BankTransactions.Controllers
         /***
          * Change the resource file
          */
+
         public ActionResult UpdateRootFile(string newResourceFileLocation)
         {
             string resourceFileLocation = ConfigurationManager.BaseLocation + ConfigurationManager.FileName;
@@ -67,7 +69,9 @@ namespace BankTransactions.Controllers
         /**
          * TODO: Refactor
          */
-        public ActionResult AddFile(HttpPostedFileBase file) {
+
+        public ActionResult AddFile(HttpPostedFileBase file)
+        {
             // Get the current resource root file
             string resourceFileLocation = ConfigurationManager.BaseLocation + ConfigurationManager.FileName;
             TransactionAdapterType type = ConfigurationManager.FileType;
