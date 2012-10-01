@@ -36,4 +36,8 @@ $(document).ready(function () {
         $("#accordion > li > ul > li").removeClass("strong");
         $(this).addClass("strong");
     });
+	window.onscroll = function () {
+        document.getElementById('content_menu').style.top = (document.body.scrollTop + 165) + "px";
+    }
+       
 });

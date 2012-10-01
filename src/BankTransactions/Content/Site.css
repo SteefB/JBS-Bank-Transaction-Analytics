@@ -53,6 +53,7 @@ body {
     border-radius:10px;
     margin-right: 30px;
     //position: fixed;
+    position: absolute;
 }
 #content_container {
     width: 770px;
