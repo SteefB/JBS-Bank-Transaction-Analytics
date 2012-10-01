@@ -1,15 +1,8 @@
-﻿using System;
+﻿using BankTransactions.Controllers.Adapters;
+using BankTransactions.Controllers.Util;
+using nl.jbs.banktransactions;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using nl.jorncruijsen.jbs.transactions;
-using Microsoft.VisualBasic.FileIO;
-using System.Collections.ObjectModel;
-using BankTransactions.Controllers.Adapters;
-using System.Xml;
-using System.Xml.Serialization;
-using System.IO;
-using BankTransactions.Controllers.Util;
 
 namespace BankTransactions.Controllers
 {
@@ -17,7 +10,7 @@ namespace BankTransactions.Controllers
     {
         public static IEnumerable<BankRecord> GetBankRecords()
         {
-            return GetBankRecords(ConfigurationManager.BaseLocation + ConfigurationManager.FileName, ConfigurationManager.FileType).OrderBy(r => r.RequestDate);
+            return GetBankRecords(ConfigurationManager.BaseLocation + ConfigurationManager.FileName, ConfigurationManager.FileType).OrderByDescending(r => r.RequestDate);
         }
 
         public static IList<BankRecord> GetBankRecords(string file, TransactionAdapterType type)

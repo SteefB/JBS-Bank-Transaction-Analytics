@@ -1,12 +1,14 @@
-﻿@using nl.jorncruijsen.jbs.transactions
+﻿@using nl.jbs.banktransactions
 
 @model IEnumerable<BankRecord>
 
-@{int tableCounter = (int)(HttpContext.Current.Items["TableCounter"] = (HttpContext.Current.Items.Contains("TableCounter") ? ((int)HttpContext.Current.Items["TableCounter"])+1 : 0));}
+@* Get the transactioncounter and increment it by 1 *@
+@* TODO Do something proper instead of this lousy disgusting bullcrap shitfaced hacky workaround chaos *@
+@{int transactionCounter = (int)(HttpContext.Current.Items["TransactionCounter"] = (HttpContext.Current.Items.Contains("TransactionCounter") ? ((int)HttpContext.Current.Items["TransactionCounter"]) + 1 : 0));}
            
 @{int counter = 0;}
 
-<table class="data" id="transactionTable_@(tableCounter)">
+<table class="data" id="transactionTable_@(transactionCounter)">
     <tr><th>Datum</th><th>Hoeveelheid</th><th>Tegenrekening</th><th>Beschrijving</th></tr>
 
     @foreach (BankRecord record in Model) {
@@ -25,12 +27,8 @@
 
 </table>
 
-<div class="hide" id="transactionChart_@(tableCounter)">
-    @Html.Partial("Partials/Chart", Model)
-</div>
-
 <div class="buttonBar">
-    <p class="showMoreToggleButton" onclick="toggleVisibility('transactionTable_@(tableCounter)', this);">Show more...</p>
+    <p class="showMoreToggleButton" onclick="toggleVisibility('transactionTable_@(transactionCounter)', this);">Show more...</p>
 
-    <p class="showMoreToggleButton" onclick="showChart('transactionChart_@(tableCounter)', this);">Draw me a chart...</p>
+    @Html.Partial("Partials/GoogleChart", Model)
 </div>

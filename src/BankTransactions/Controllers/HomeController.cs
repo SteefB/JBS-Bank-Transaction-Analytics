@@ -1,13 +1,9 @@
-﻿using System;
+﻿using BankTransactions.Models;
+using nl.jbs.banktransactions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
-using System.Collections.ObjectModel;
-using nl.jorncruijsen.jbs.transactions;
-using Microsoft.VisualBasic.FileIO;
-using JQChart.Web;
-using BankTransactions.Models;
 
 namespace BankTransactions.Controllers
 {
@@ -39,7 +35,8 @@ namespace BankTransactions.Controllers
 
             IOrderedEnumerable<IGrouping<string, BankRecord>> monthly = selection.GroupBy(r => new TimePeriodGroup(r.RequestDate).ToString()).OrderBy(r => r.Key);
 
-            ChartDataSummary cds = new ChartDataSummary() {
+            ChartDataSummary cds = new ChartDataSummary()
+            {
                 AllTransactions = ChartData.GetAllTransactionData(selection),
                 MonthlySpending = ChartData.GetMonthlySpending(monthly),
                 MonthlySpendingCumulative = ChartData.GetMonthlySpendingCumulative(monthly),
@@ -108,6 +105,7 @@ namespace BankTransactions.Controllers
         }
 
         # region GetTypesInGivenPeriod
+
         [HttpGet]
         public ActionResult GetTypesInGivenPeriod() // give all transactions from past year as default
         {
@@ -116,10 +114,13 @@ namespace BankTransactions.Controllers
                 startDate = DateTime.Now.AddYears(-1),
                 endDate = DateTime.Now
             };
+
             //retrieve all transactions
             IEnumerable<BankRecord> rec = RecordRetriever.GetBankRecords();
-            // select between dates            
+
+            // select between dates
             rec = rec.Where(r => r.RequestDate >= model.startDate && r.RequestDate <= model.endDate);
+
             // group the selection
             IOrderedEnumerable<IGrouping<string, BankRecord>> selection = rec.GroupBy(r => r.Category.ToString()).OrderByDescending(g => g.Sum(r => r.Amount));
 
@@ -127,16 +128,19 @@ namespace BankTransactions.Controllers
 
             return View(model);
         }
+
         [HttpPost]
-        public ActionResult GetTypesInGivenPeriod(DateTime startDate, DateTime endDate) 
+        public ActionResult GetTypesInGivenPeriod(DateTime startDate, DateTime endDate)
         {
             //retrieve all transactions
             IEnumerable<BankRecord> rec = RecordRetriever.GetBankRecords();
-            // select between dates            
+
+            // select between dates
             rec = rec.Where(r => r.RequestDate >= startDate && r.RequestDate <= endDate);
+
             // group the selection
             IOrderedEnumerable<IGrouping<string, BankRecord>> selection = rec.GroupBy(r => r.Category.ToString()).OrderByDescending(g => g.Sum(r => r.Amount));
-            
+
             ModelGetTypesInGivenPeriod model = new ModelGetTypesInGivenPeriod
             {
                 startDate = startDate,
@@ -147,8 +151,7 @@ namespace BankTransactions.Controllers
             // end of testing
             return View(model);
         }
+
         #endregion
-
-
     }
 }

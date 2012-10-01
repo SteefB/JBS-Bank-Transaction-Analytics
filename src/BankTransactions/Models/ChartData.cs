@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 
-namespace nl.jorncruijsen.jbs.transactions
+namespace nl.jbs.banktransactions
 {
     public class ChartData
     {
@@ -19,19 +18,19 @@ namespace nl.jorncruijsen.jbs.transactions
 
                 cum += monthlyDif;
 
-                data.Add(new ChartData() {
+                data.Add(new ChartData()
+                {
                     Label = group.Key,
                     Value1 = group.Where(r => r.Type.Equals(BankRecord.TransactionType.DEBIT)).Sum(r => r.Amount),
                     Value2 = group.Where(r => r.Type.Equals(BankRecord.TransactionType.CREDIT)).Sum(r => r.Amount),
                     Value3 = monthlyDif,
                     Value4 = group.Sum(r => r.Amount),
-                    Value5 = cum 
+                    Value5 = cum
                 });
             }
 
             return data;
         }
-
 
         public static List<ChartData> GetMonthlySpendingCumulative(IOrderedEnumerable<IGrouping<string, BankRecord>> selection)
         {
@@ -50,7 +49,6 @@ namespace nl.jorncruijsen.jbs.transactions
                     Label = group.Key,
                     Value1 = cumCredit,
                     Value2 = cumDedit
-
                 });
             }
 
@@ -74,7 +72,6 @@ namespace nl.jorncruijsen.jbs.transactions
                     Date = rec.RequestDate,
                     Value1 = funding,
                     Value2 = rec.Amount * dif,
-
                 });
             }
 
@@ -94,7 +91,8 @@ namespace nl.jorncruijsen.jbs.transactions
 
             // TODO: Find a proper way to do a left outer join
             List<ChartData> leftOvers = new List<ChartData>(12 - months.Count());
-            for(int i = 12; i > months.Count();i--) {
+            for (int i = 12; i > months.Count(); i--)
+            {
                 leftOvers.Add(new ChartData()
                 {
                     Label = string.Format("{1}/{0:00}", i, year)
@@ -107,11 +105,17 @@ namespace nl.jorncruijsen.jbs.transactions
         }
 
         public string Label { get; set; }
+
         public DateTime Date { get; set; }
+
         public double Value1 { get; set; }
+
         public double Value2 { get; set; }
+
         public double Value3 { get; set; }
+
         public double Value4 { get; set; }
+
         public double Value5 { get; set; }
     }
 }

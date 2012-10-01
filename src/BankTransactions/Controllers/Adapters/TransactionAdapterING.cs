@@ -1,11 +1,10 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.FileIO;
+using nl.jbs.banktransactions;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using nl.jorncruijsen.jbs.transactions;
 using System.Collections.ObjectModel;
-using Microsoft.VisualBasic.FileIO;
 using System.Globalization;
+using System.Linq;
 
 namespace BankTransactions.Controllers.Adapters
 {
@@ -38,19 +37,23 @@ namespace BankTransactions.Controllers.Adapters
                             nameDefinition = parts.First();
                             announcement = parts.Last() + fields[1];
                             break;
+
                         case "GT":
                         case "OV":
                         default:
                             nameDefinition = fields[1];
                             announcement = fields[8];
                             break;
+
                         case "VZ":
                         case "IC":
                         case "DV":
                             nameDefinition = fields[8];
                             announcement = fields[1];
                             break;
+
                         case "GM":
+
                             // If there exist angle brackets in the second field, return the first two parts divided by those brackets
                             if (fields[1].Contains('>'))
                             {

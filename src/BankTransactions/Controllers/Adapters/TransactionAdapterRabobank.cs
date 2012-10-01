@@ -1,9 +1,7 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.FileIO;
+using nl.jbs.banktransactions;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using nl.jorncruijsen.jbs.transactions;
-using Microsoft.VisualBasic.FileIO;
 using System.Collections.ObjectModel;
 using System.Globalization;
 
@@ -47,7 +45,8 @@ namespace BankTransactions.Controllers.Adapters
             BankRecord.TransactionCategory cat;
             Enum.TryParse<BankRecord.TransactionCategory>(args[8].ToUpper(), out cat);
 
-            return new BankRecord() {
+            return new BankRecord()
+            {
                 // First value is the bank number
                 BankNum = args[0],
 

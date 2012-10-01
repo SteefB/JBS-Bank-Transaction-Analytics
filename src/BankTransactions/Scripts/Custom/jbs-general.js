@@ -1,8 +1,6 @@
 ﻿// TODO: Refactor and un-uglify
-function showChart(elemId, caller) {
+function toggleChartText(caller) {
     caller.innerHTML = caller.innerHTML == "Draw me a chart..." ? "Hide this chart..." : "Draw me a chart...";
-
-    switchClassName(document.getElementById(elemId), "hide", "show");
 }
 
 function toggleVisibility(elemId, caller) {
@@ -24,3 +22,18 @@ function switchClassName(elem, a, b) {
         elem.className = elem.className.replace(b, a);
     }
 }
+
+$(document).ready(function () {
+    $("#accordion > li > div").click(function () {
+        $("#accordion > li > div").removeClass("opened");
+        $(this).addClass("opened");
+        if (false == $(this).next().is(':visible')) {
+            $('#accordion ul').slideUp(1);
+        }
+        $(this).next().slideToggle(1);
+    });
+    $("#accordion > li > ul > li").click(function () {
+        $("#accordion > li > ul > li").removeClass("strong");
+        $(this).addClass("strong");
+    });
+});
