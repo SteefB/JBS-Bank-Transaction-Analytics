@@ -59,7 +59,12 @@
                 $("#accordion > li > ul > li").removeClass("strong");
                 $(this).addClass("strong");
             });
+            window.onscroll = function () {
+                document.getElementById('content_menu').style.top = "-" + document.body.scrollTop + "px";
+            }
         });
+        
+        
     </script>
 </head>
 <body>

@@ -52,10 +52,11 @@ body {
     box-shadow: 0px 0px 20px black;
     border-radius:10px;
     margin-right: 30px;
+    //position: fixed;
 }
 #content_container {
     width: 770px;
-    margin-left: 12px;
+    margin-left: 312px;
     float: left;
 }
 
