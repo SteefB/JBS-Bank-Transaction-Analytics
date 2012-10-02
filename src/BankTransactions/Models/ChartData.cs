@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace nl.jbs.banktransactions
+namespace nl.jbs.banktransactions.Models
 {
     public class ChartData
     {

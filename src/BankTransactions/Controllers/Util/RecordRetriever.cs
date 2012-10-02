@@ -1,22 +1,57 @@
-﻿using BankTransactions.Controllers.Adapters;
+﻿using System;
+using System.Collections.Generic;
+using System.Data.Entity;
+using System.Linq;
+using BankTransactions.Controllers.Adapters;
 using BankTransactions.Controllers.Util;
 using nl.jbs.banktransactions;
-using System.Collections.Generic;
-using System.Linq;
+using nl.jbs.banktransactions.Models;
 
 namespace BankTransactions.Controllers
 {
     public class RecordRetriever
     {
-        public static IEnumerable<BankRecord> GetBankRecords()
+        public static IEnumerable<BankRecord> GetAllBankRecords()
         {
-            return GetBankRecords(ConfigurationManager.BaseLocation + ConfigurationManager.FileName, ConfigurationManager.FileType).OrderByDescending(r => r.RequestDate);
+            List<BankRecord> uploadList = new List<BankRecord>();
+            using (var db = new BankTransactionsContext())
+            {
+                foreach (BankTransactionsUpload upload in db.bankTransaction)
+                {
+                    uploadList.Concat(upload.bankRecord);
+                }
+            }
+            return uploadList;
         }
 
-        public static IList<BankRecord> GetBankRecords(string file, TransactionAdapterType type)
+        public static IEnumerable<BankRecord> GetBankRecordsByUser(String userName)
         {
-            TransactionAdapter adapter = TransactionAdapterFactory.GetAdapter(type);
-            return adapter.ParseBankRecords(file);
+            List<BankRecord> uploadList = new List<BankRecord>();
+            using (var db = new BankTransactionsContext())
+            {
+                List<BankTransactionsUpload> transactions = db.bankTransaction.Where(x => x.user == userName).ToList<BankTransactionsUpload>();
+
+                foreach (BankTransactionsUpload upload in db.bankTransaction)
+                {
+                    uploadList.Concat(upload.bankRecord);
+                }
+            }
+            return uploadList;
+        }
+
+        public static IEnumerable<BankRecord> GetBankRecordsByUploadPerUser(String path, String userName)
+        {
+            List<BankRecord> uploadList = new List<BankRecord>();
+            using (var db = new BankTransactionsContext())
+            {
+                List<BankTransactionsUpload> transactions = db.bankTransaction.Where(x => x.user == userName && x.filePath == path).ToList<BankTransactionsUpload>();
+
+                foreach (BankTransactionsUpload upload in transactions)
+                {
+                    uploadList.Concat(upload.bankRecord);
+                }
+            }
+            return uploadList;
         }
     }
 }

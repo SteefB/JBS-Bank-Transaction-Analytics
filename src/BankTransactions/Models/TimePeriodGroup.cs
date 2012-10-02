@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace nl.jbs.banktransactions
+namespace nl.jbs.banktransactions.Models
 {
     public class TimePeriodGroup : IComparable<TimePeriodGroup>
     {

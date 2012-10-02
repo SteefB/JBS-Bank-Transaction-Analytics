@@ -1,8 +1,9 @@
-﻿using BankTransactions.Controllers.Util;
-using nl.jbs.banktransactions;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using BankTransactions.Controllers.Util;
+using nl.jbs.banktransactions;
+using nl.jbs.banktransactions.Models;
 
 namespace BankTransactions.Controllers.Charts
 {
@@ -11,7 +12,7 @@ namespace BankTransactions.Controllers.Charts
         public static string GetBasicChartDataFor(IEnumerable<BankRecord> records)
         {
             double acc = 0;
-            return GoogleChartDataTableWrapper.ToJSON(new string[] {"Date", "Amount", "Total"}, 
+            return GoogleChartDataTableWrapper.ToJSON(new string[] { "Date", "Amount", "Total" },
                 records.OrderBy(r => r.RequestDate).Select(r => new GoogleChartRow(new object[] { r.RequestDate, r.Amount, acc += r.CreditAmount })));
         }
 

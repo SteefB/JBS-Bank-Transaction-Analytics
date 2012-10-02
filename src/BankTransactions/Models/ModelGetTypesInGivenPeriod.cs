@@ -1,8 +1,8 @@
-﻿using nl.jbs.banktransactions;
-using System;
+﻿using System;
 using System.Linq;
+using nl.jbs.banktransactions;
 
-namespace BankTransactions.Models
+namespace nl.jbs.banktransactions.Models
 {
     public class ModelGetTypesInGivenPeriod
     {

@@ -1,9 +1,9 @@
-﻿using BankTransactions.Controllers.Adapters;
-using BankTransactions.Controllers.Util;
-using System;
+﻿using System;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using BankTransactions.Controllers.Adapters;
+using BankTransactions.Controllers.Util;
 
 namespace BankTransactions.Controllers
 {
@@ -15,7 +15,7 @@ namespace BankTransactions.Controllers
 
             ViewData["ResourceFolder"] = resourceFileLocation;
             ViewData["ResourceType"] = ConfigurationManager.FileType;
-            ViewData["NumRecords"] = RecordRetriever.GetBankRecords().Count();
+            ViewData["NumRecords"] = RecordRetriever.GetAllBankRecords().Count();
             ViewData["NumLines"] = System.IO.File.ReadLines(resourceFileLocation).Count();
             ViewData["LastUpdate"] = System.IO.File.GetLastWriteTime(resourceFileLocation);
 
@@ -79,7 +79,7 @@ namespace BankTransactions.Controllers
             // Push some data to the view
             ViewData["ResourceFolder"] = resourceFileLocation;
             ViewData["ResourceType"] = type.ToString();
-            ViewData["NumRecords"] = RecordRetriever.GetBankRecords().Count();
+            ViewData["NumRecords"] = RecordRetriever.GetAllBankRecords().Count();
             ViewData["NumLines"] = System.IO.File.ReadLines(resourceFileLocation).Count();
 
             // Save the uploaded file to the /Uploaded/ dir
@@ -88,14 +88,14 @@ namespace BankTransactions.Controllers
 
             // Some more data on the new file
             ViewData["NewFileNumLines"] = System.IO.File.ReadLines(path).Count();
-            ViewData["NewFileNumRecords"] = RecordRetriever.GetBankRecords(path, type).Count;
+            ViewData["NewFileNumRecords"] = RecordRetriever.GetBankRecordsByUploadPerUser(path, User.Identity.Name);
 
             // Merge uploaded file with the root file (which will make an automatic back-up as well)
             CSVMerger.MergeFiles(resourceFileLocation, path);
 
             // And some more data on the merged files
             ViewData["CombinedFileNumLines"] = System.IO.File.ReadLines(resourceFileLocation).Count();
-            ViewData["CombinedFileNumRecords"] = RecordRetriever.GetBankRecords().Count();
+            ViewData["CombinedFileNumRecords"] = RecordRetriever.GetBankRecordsByUser(User.Identity.Name);
 
             return View();
         }

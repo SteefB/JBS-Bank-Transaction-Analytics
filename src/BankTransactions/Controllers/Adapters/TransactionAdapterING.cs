@@ -1,18 +1,21 @@
-﻿using Microsoft.VisualBasic.FileIO;
-using nl.jbs.banktransactions;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Data.Entity;
 using System.Globalization;
 using System.Linq;
+using BankTransactions.Controllers.Util;
+using Microsoft.VisualBasic.FileIO;
+using nl.jbs.banktransactions;
+using nl.jbs.banktransactions.Models;
 
 namespace BankTransactions.Controllers.Adapters
 {
     public class TransactionAdapterING : TransactionAdapter
     {
-        public IList<BankRecord> ParseBankRecords(string file)
+        public void ParseBankRecords(string file)
         {
-            IList<BankRecord> records = new Collection<BankRecord>();
+            List<BankRecord> records = new List<BankRecord>();
 
             TextFieldParser parser = new TextFieldParser(file);
             parser.TextFieldType = FieldType.Delimited;
@@ -91,9 +94,20 @@ namespace BankTransactions.Controllers.Adapters
                 }
             }
 
-            parser.Close();
+            // Save the records and other info into the database.
+            using (var db = new BankTransactionsContext())
+            {
+                BankTransactionsUpload upload = new BankTransactionsUpload()
+                {
+                    fileName = file,
+                    filePath = System.IO.Path.Combine(ConfigurationManager.BaseLocation, "Uploaded/" + DateTime.Now.Ticks + "_" + System.IO.Path.GetFileName(file)),
+                    user = "test",
+                    bankRecord = records
+                };
+                db.SaveChanges();
+            }
 
-            return records;
+            parser.Close();
         }
     }
 }

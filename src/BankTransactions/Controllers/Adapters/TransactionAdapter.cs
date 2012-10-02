@@ -1,10 +1,10 @@
-﻿using nl.jbs.banktransactions;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using nl.jbs.banktransactions;
 
 namespace BankTransactions.Controllers.Adapters
 {
     public interface TransactionAdapter
     {
-        IList<BankRecord> ParseBankRecords(string file);
+        void ParseBankRecords(string file);
     }
 }

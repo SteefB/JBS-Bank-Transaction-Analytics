@@ -1,9 +1,9 @@
-﻿using BankTransactions.Models;
-using nl.jbs.banktransactions;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
+using nl.jbs.banktransactions;
+using nl.jbs.banktransactions.Models;
 
 namespace BankTransactions.Controllers
 {
@@ -12,14 +12,14 @@ namespace BankTransactions.Controllers
     {
         public ActionResult All()
         {
-            IEnumerable<BankRecord> selection = RecordRetriever.GetBankRecords();
+            IEnumerable<BankRecord> selection = RecordRetriever.GetAllBankRecords();
 
             return View(selection);
         }
 
         public ActionResult ATM()
         {
-            IEnumerable<BankRecord> selection = RecordRetriever.GetBankRecords().Where(r => r.Description.Contains("Geldautomaat"));
+            IEnumerable<BankRecord> selection = RecordRetriever.GetAllBankRecords().Where(r => r.Description.Contains("Geldautomaat"));
 
             return View(selection);
         }
@@ -31,7 +31,7 @@ namespace BankTransactions.Controllers
 
         public ActionResult Charts()
         {
-            IEnumerable<BankRecord> selection = RecordRetriever.GetBankRecords();
+            IEnumerable<BankRecord> selection = RecordRetriever.GetAllBankRecords();
 
             IOrderedEnumerable<IGrouping<string, BankRecord>> monthly = selection.GroupBy(r => new TimePeriodGroup(r.RequestDate).ToString()).OrderBy(r => r.Key);
 
@@ -54,7 +54,7 @@ namespace BankTransactions.Controllers
 
         public ActionResult Details(string name)
         {
-            IEnumerable<BankRecord> selection = RecordRetriever.GetBankRecords().Where(r => r.Name.ToLower().Contains(name.ToLower()));
+            IEnumerable<BankRecord> selection = RecordRetriever.GetAllBankRecords().Where(r => r.Name.ToLower().Contains(name.ToLower()));
 
             return View(selection);
         }
@@ -66,28 +66,28 @@ namespace BankTransactions.Controllers
 
         public ActionResult Monthly()
         {
-            IOrderedEnumerable<IGrouping<string, BankRecord>> selection = RecordRetriever.GetBankRecords().GroupBy(r => new TimePeriodGroup(r.RequestDate).ToString()).OrderByDescending(r => r.Key);
+            IOrderedEnumerable<IGrouping<string, BankRecord>> selection = RecordRetriever.GetAllBankRecords().GroupBy(r => new TimePeriodGroup(r.RequestDate).ToString()).OrderByDescending(r => r.Key);
 
             return View(selection);
         }
 
         public ActionResult Overview()
         {
-            IOrderedEnumerable<IGrouping<string, BankRecord>> selection = RecordRetriever.GetBankRecords().GroupBy(r => r.Name).OrderByDescending(g => g.Sum(r => r.Amount));
+            IOrderedEnumerable<IGrouping<string, BankRecord>> selection = RecordRetriever.GetAllBankRecords().GroupBy(r => r.Name).OrderByDescending(g => g.Sum(r => r.Amount));
 
             return View(selection);
         }
 
         public ActionResult PoS()
         {
-            IEnumerable<BankRecord> selection = RecordRetriever.GetBankRecords().Where(r => r.Description.Contains("Betaalautomaat"));
+            IEnumerable<BankRecord> selection = RecordRetriever.GetAllBankRecords().Where(r => r.Description.Contains("Betaalautomaat"));
 
             return View(selection);
         }
 
         public ActionResult Recent()
         {
-            IEnumerable<BankRecord> rec = RecordRetriever.GetBankRecords();
+            IEnumerable<BankRecord> rec = RecordRetriever.GetAllBankRecords();
 
             return View(rec.Where(r => r.RequestDate.AddDays(7).CompareTo(rec.OrderByDescending(a => a.RequestDate).First().RequestDate) > 0));
         }
@@ -99,7 +99,7 @@ namespace BankTransactions.Controllers
 
         public ActionResult Types()
         {
-            IOrderedEnumerable<IGrouping<string, BankRecord>> selection = RecordRetriever.GetBankRecords().GroupBy(r => r.Category.ToString()).OrderByDescending(g => g.Sum(r => r.Amount));
+            IOrderedEnumerable<IGrouping<string, BankRecord>> selection = RecordRetriever.GetAllBankRecords().GroupBy(r => r.Category.ToString()).OrderByDescending(g => g.Sum(r => r.Amount));
 
             return View(selection);
         }
@@ -116,7 +116,7 @@ namespace BankTransactions.Controllers
             };
 
             //retrieve all transactions
-            IEnumerable<BankRecord> rec = RecordRetriever.GetBankRecords();
+            IEnumerable<BankRecord> rec = RecordRetriever.GetAllBankRecords();
 
             // select between dates
             rec = rec.Where(r => r.RequestDate >= model.startDate && r.RequestDate <= model.endDate);
@@ -133,7 +133,7 @@ namespace BankTransactions.Controllers
         public ActionResult GetTypesInGivenPeriod(DateTime startDate, DateTime endDate)
         {
             //retrieve all transactions
-            IEnumerable<BankRecord> rec = RecordRetriever.GetBankRecords();
+            IEnumerable<BankRecord> rec = RecordRetriever.GetAllBankRecords();
 
             // select between dates
             rec = rec.Where(r => r.RequestDate >= startDate && r.RequestDate <= endDate);

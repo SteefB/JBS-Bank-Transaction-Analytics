@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace nl.jbs.banktransactions
+namespace nl.jbs.banktransactions.Models
 {
     public class ChartDataSummary
     {

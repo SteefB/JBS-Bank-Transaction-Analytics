@@ -1,8 +1,9 @@
-﻿using nl.jbs.banktransactions;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using nl.jbs.banktransactions;
+using nl.jbs.banktransactions.Models;
 
 namespace BankTransactions.Controllers.Util
 {

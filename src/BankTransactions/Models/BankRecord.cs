@@ -1,6 +1,7 @@
 ﻿using System;
+using System.Data.Entity;
 
-namespace nl.jbs.banktransactions
+namespace nl.jbs.banktransactions.Models
 {
     public class BankRecord
     {
@@ -37,6 +38,8 @@ namespace nl.jbs.banktransactions
         #endregion Variables
 
         #region Properties
+
+        public String file { get; set; }
 
         public string BankNum { get; set; }
 
